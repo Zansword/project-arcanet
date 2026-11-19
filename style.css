@@ -146,14 +146,6 @@ html {
   pointer-events: auto;
 }
 
-.eyebrow {
-  font-size: 13px;
-  letter-spacing: 0.28em;
-  color: var(--accent);
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
 /* 인트로 시퀀스 컨테이너 */
 .intro-sequence {
   display: flex;
@@ -164,20 +156,57 @@ html {
   min-height: 310px;
 }
 
-/* 1단계: Arcanet 페이드 인 */
-.arcanet-title {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+/* 1단계: ARCADE NETWORK -> DE/WORK 페이드아웃 -> ARCANET 합체 */
+.arcanet-combine {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
   font-weight: 800;
   letter-spacing: 0.04em;
   color: #ffffff;
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.65s ease;
 }
 
-.arcanet-title.visible {
+.arcanet-combine.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.arcanet-combine .part,
+.arcanet-combine .space-gap {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.arcanet-combine .part.drop-mid {
+  max-width: 3ch;
+  opacity: 1;
+}
+
+.arcanet-combine .part.drop-end {
+  max-width: 5ch;
+  opacity: 1;
+}
+
+.arcanet-combine .space-gap {
+  max-width: 0.6ch;
+  opacity: 1;
+}
+
+.arcanet-combine.merged {
+  letter-spacing: 0.08em;
+}
+
+.arcanet-combine.merged .part.drop-mid,
+.arcanet-combine.merged .part.drop-end,
+.arcanet-combine.merged .space-gap {
+  max-width: 0;
+  opacity: 0;
 }
 
 /* 2단계: A -> B -> R -> O 순차 등장 */
