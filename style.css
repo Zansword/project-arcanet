@@ -131,7 +131,12 @@ html {
 
 .stage-layer {
   position: absolute;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 0 24px;
   opacity: 0;
@@ -146,33 +151,38 @@ html {
   pointer-events: auto;
 }
 
-/* 인트로 시퀀스 컨테이너 */
+/* 인트로 시퀀스: 처음엔 센터에서 시작 */
 .intro-sequence {
+  position: relative;
+  width: 100%;
+  height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  min-height: 310px;
 }
 
-/* 1단계: ARCADE NETWORK -> DE/WORK 페이드아웃 -> ARCANET 합체 */
+/* 1단계: ARCADE NETWORK 센터 등장 -> DE/WORK 페이드아웃 & ARCANET 합체 -> 위로 이동 */
 .arcanet-combine {
+  position: relative;
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  font-size: clamp(2rem, 4.8vw, 3.6rem);
+  font-size: clamp(2.4rem, 6.2vw, 4.6rem);
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.65s ease;
+  transform: translateY(70px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    letter-spacing 0.65s ease,
+    font-size 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .arcanet-combine.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .arcanet-combine .part,
@@ -180,7 +190,7 @@ html {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
 }
 
 .arcanet-combine .part.drop-mid {
@@ -194,7 +204,7 @@ html {
 }
 
 .arcanet-combine .space-gap {
-  max-width: 0.6ch;
+  max-width: 0.65ch;
   opacity: 1;
 }
 
@@ -209,12 +219,19 @@ html {
   opacity: 0;
 }
 
-/* 2단계: A -> B -> R -> O 순차 등장 */
+/* ARCANET 합체 후 위로 부드럽게 올라가며 ABRO 자리 확보 */
+.arcanet-combine.lift-up {
+  transform: translateY(-18px);
+  font-size: clamp(2rem, 4.8vw, 3.4rem);
+}
+
+/* 2단계: ARCANET이 올라간 뒤 아래에서 A -> B -> R -> O 순차 등장 */
 .abro-matrix {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+  margin-top: 14px;
 }
 
 .abro-row {
@@ -225,8 +242,8 @@ html {
   display: flex;
   align-items: baseline;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(14px);
+  transition: opacity 0.48s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .abro-row.show {
@@ -253,7 +270,7 @@ html {
 }
 
 .scroll-hint {
-  margin-top: 28px;
+  margin-top: 24px;
   font-size: 13px;
   color: var(--text-secondary);
 }
