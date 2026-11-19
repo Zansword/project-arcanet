@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Arcanet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 상단 고정 내비게이션 (Apple 스타일) -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <!-- 좌측 홈 아이콘 -->
+      <a href="#top" class="brand-logo" aria-label="Project Arcanet Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </a>
+
+      <!-- 중앙 7개 카테고리 메뉴 -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#intro" data-i18n="nav.intro">소개문</a>
+        <a href="#overview" data-i18n="nav.overview">설명</a>
+        <a href="#components" data-i18n="nav.components">구성요소</a>
+        <a href="#download" data-i18n="nav.download">다운로드</a>
+        <a href="#process" data-i18n="nav.process">개발과정</a>
+        <a href="#developer" data-i18n="nav.developer">개발자</a>
+        <a href="#support" data-i18n="nav.support">후원</a>
+      </nav>
+
+      <!-- 우측 다국어 확장 탭 -->
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="ko">KO</button>
+        <span class="divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 휠 연동형 키 비주얼 스테이지 -->
+    <section class="scroll-stage" id="hero-stage">
+      <div class="sticky-viewport">
+        <!-- 배경 미디어 슬롯 (추후 video 또는 고해상도 이미지 교체용) -->
+        <div class="bg-media-slot" id="bg-media">
+          <div class="bg-grid-overlay"></div>
+        </div>
+
+        <!-- Step 1 & 2: ABRO -> 풀 단어 페이드 인 -->
+        <div class="stage-layer active" data-step="0">
+          <p class="eyebrow">PROJECT ARCANET</p>
+          <div class="abro-matrix">
+            <div class="abro-row">
+              <span class="initial">A</span>
+              <span class="word-expand">rcade</span>
+            </div>
+            <div class="abro-row">
+              <span class="initial">B</span>
+              <span class="word-expand">oard</span>
+            </div>
+            <div class="abro-row">
+              <span class="initial">R</span>
+              <span class="word-expand">ust and Rollback</span>
+            </div>
+            <div class="abro-row">
+              <span class="initial">O</span>
+              <span class="word-expand">ptimization</span>
+            </div>
+          </div>
+          <p class="scroll-hint" data-i18n="hero.hint">마우스 휠을 내려 아키텍처를 탐색하세요</p>
+        </div>
+
+        <!-- Step 3: 4대 핵심 키워드 순차 전환 -->
+        <div class="stage-layer" data-step="1">
+          <span class="pillar-badge">01 / 04</span>
+          <h2 class="pillar-title">Arcade</h2>
+          <p class="pillar-desc" data-i18n="pillar.arcade">사라져가는 아케이드 시대의 게임 문화</p>
+        </div>
+
+        <div class="stage-layer" data-step="2">
+          <span class="pillar-badge">02 / 04</span>
+          <h2 class="pillar-title">Board Architecture</h2>
+          <p class="pillar-desc" data-i18n="pillar.board">3D 아케이드 에뮬레이션을 위한 최적화된 아키텍처</p>
+        </div>
+
+        <div class="stage-layer" data-step="3">
+          <span class="pillar-badge">03 / 04</span>
+          <h2 class="pillar-title">Rollback Netcode</h2>
+          <p class="pillar-desc" data-i18n="pillar.rollback">결정론적 구조를 통해 지원되는 Rollback 넷코드</p>
+        </div>
+
+        <div class="stage-layer" data-step="4">
+          <span class="pillar-badge">04 / 04</span>
+          <h2 class="pillar-title">Organize Community</h2>
+          <p class="pillar-desc" data-i18n="pillar.community">유저들이 서버를 개설하고 형성되는 독자적인 커뮤니티 인프라</p>
+        </div>
+
+        <!-- 진행도 인디케이터 -->
+        <div class="stage-progress">
+          <span class="dot active" data-dot="0"></span>
+          <span class="dot" data-dot="1"></span>
+          <span class="dot" data-dot="2"></span>
+          <span class="dot" data-dot="3"></span>
+          <span class="dot" data-dot="4"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7개 메뉴 대응 섹션 도화지 -->
+    <section id="intro" class="content-section">
+      <div class="container">
+        <h2 data-i18n="sec.intro.title">소개문</h2>
+        <p class="placeholder-text" data-i18n="sec.intro.body">Project Arcanet의 시작과 환영 인사말이 들어갈 영역입니다.</p>
+      </div>
+    </section>
+
+    <section id="overview" class="content-section alt-bg">
+      <div class="container">
+        <h2 data-i18n="sec.overview.title">설명</h2>
+        <p class="placeholder-text" data-i18n="sec.overview.body">에뮬레이터의 전체적인 목적과 핵심 설계 철학이 들어갈 영역입니다.</p>
+      </div>
+    </section>
+
+    <section id="components" class="content-section">
+      <div class="container">
+        <h2 data-i18n="sec.components.title">구성요소</h2>
+        <div class="bento-grid">
+          <div class="bento-card"><h3>Core Engine</h3><p>Deterministic Board Architecture</p></div>
+          <div class="bento-card"><h3>Rust Wrapper</h3><p>Safe Frontend &amp; Execution Layer</p></div>
+          <div class="bento-card"><h3>Rollback Sync</h3><p>Frame-accurate State Synchronization</p></div>
+          <div class="bento-card"><h3>Community Server</h3><p>User-hosted Network Infrastructure</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="content-section alt-bg">
+      <div class="container">
+        <h2 data-i18n="sec.download.title">다운로드</h2>
+        <p class="placeholder-text" data-i18n="sec.download.body">최신 릴리즈 바이너리 및 실행 사양, 라이선스 안내가 들어갈 영역입니다.</p>
+        <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" class="cta-btn" data-i18n="sec.download.btn">GitHub Releases 바로가기</a>
+      </div>
+    </section>
+
+    <section id="process" class="content-section">
+      <div class="container">
+        <h2 data-i18n="sec.process.title">개발 과정</h2>
+        <p class="placeholder-text" data-i18n="sec.process.body">과거 포크 프로젝트 분석에서 독자적 아케이드 보드 재구축 및 사후 소스 공개 로드맵까지의 기록입니다.</p>
+      </div>
+    </section>
+
+    <section id="developer" class="content-section alt-bg">
+      <div class="container">
+        <h2 data-i18n="sec.developer.title">About Developer</h2>
+        <p class="placeholder-text" data-i18n="sec.developer.body">개발자 소개 및 엔지니어링 철학이 들어갈 영역입니다.</p>
+      </div>
+    </section>
+
+    <section id="support" class="content-section">
+      <div class="container">
+        <h2 data-i18n="sec.support.title">후원 (Coffee)</h2>
+        <p class="placeholder-text" data-i18n="sec.support.body">프로젝트의 지속적인 연구와 인프라 유지를 위한 자발적 후원 안내 영역입니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Project Arcanet. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
