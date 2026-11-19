@@ -21,7 +21,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
 }
 
-/* 상단 Apple 스타일 네비게이션 */
+/* 상단 네비게이션 */
 .top-nav {
   position: fixed;
   top: 0;
@@ -95,7 +95,7 @@ html {
   color: var(--text-primary);
 }
 
-/* 휠 연동 스크롤 스테이지 (총 높이 450vh로 휠 스크롤 여유 확보) */
+/* 휠 연동 스크롤 스테이지 */
 .scroll-stage {
   position: relative;
   height: 450vh;
@@ -129,7 +129,6 @@ html {
   background-size: 48px 48px;
 }
 
-/* 스테이지 레이어 공통 */
 .stage-layer {
   position: absolute;
   z-index: 2;
@@ -151,16 +150,81 @@ html {
   font-size: 13px;
   letter-spacing: 0.28em;
   color: var(--accent);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   font-weight: 600;
 }
 
-/* ABRO 이니셜 -> 풀 단어 확장 */
-.abro-matrix {
+/* 인트로 트랜지션 래퍼 */
+.intro-morph-wrap {
+  position: relative;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1차: ARCANET 페이드인 */
+.brand-morph {
   display: inline-flex;
+  align-items: baseline;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.8s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.7s ease;
+}
+
+.brand-morph.fade-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ARCANET에서 불필요한 글자 접으며 ABRO 축약감 부여 */
+.brand-morph.to-abro {
+  letter-spacing: 0.06em;
+}
+
+.brand-morph.to-abro .morph-tail {
+  max-width: 0;
+  opacity: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+}
+
+.morph-tail {
+  display: inline-block;
+  max-width: 3ch;
+  opacity: 1;
+}
+
+.brand-morph.hide-morph {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  position: absolute;
+}
+
+/* 2차: 세로 A / B / R / O 매트릭스 */
+.abro-matrix {
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.abro-matrix.vertical-ready {
+  display: inline-flex;
+}
+
+.abro-matrix.vertical-show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .abro-row {
@@ -185,14 +249,13 @@ html {
   transition: opacity 0.6s ease, max-width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* 휠을 살짝 내렸을 때 확장 클래스 활성화 */
 .abro-matrix.expanded .word-expand {
   opacity: 1;
   max-width: 600px;
 }
 
 .scroll-hint {
-  margin-top: 36px;
+  margin-top: 32px;
   font-size: 13px;
   color: var(--text-secondary);
 }
@@ -246,7 +309,7 @@ html {
   transform: scale(1.5);
 }
 
-/* 일반 섹션 도화지 */
+/* 섹션 도화지 */
 .content-section {
   padding: 110px 24px;
   border-top: 1px solid var(--border-color);
