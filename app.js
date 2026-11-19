@@ -9,7 +9,7 @@ const i18nData = {
     "nav.developer": "개발자",
     "nav.support": "후원",
     "hero.hint": "마우스 휠을 내려 아키텍처를 탐색하세요",
-    "pillar.arcade": "사라져가는 아케이드 시대의 게임 문화",
+    "pillar.arcade": "사라져가는 아케이드 시대의 게임 문화 보존과 계승",
     "pillar.board": "3D 아케이드 에뮬레이션을 위한 최적화된 아키텍처",
     "pillar.rollback": "결정론적 구조를 통해 지원되는 Rollback 넷코드",
     "pillar.community": "유저들이 서버를 개설하고 형성되는 독자적인 커뮤니티 인프라",
