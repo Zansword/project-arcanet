@@ -76,28 +76,38 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 초기 시퀀스: ARCADE NETWORK 페이드인 -> DE/WORK 페이드아웃 & ARCANET 합체 -> A/B/R/O 순차 등장
-const arcanetCombine = document.getElementById("arcanet-combine");
-const abroMatrix = document.getElementById("abro-matrix");
-const abroRows = document.querySelectorAll(".abro-row[data-seq]");
-
+// 2. 초기 시퀀스:
+// 1) 센터에서 ARCADE NETWORK 페이드인
+// 2) DE, WORK 페이드아웃 & ARCA + NET 합체(ARCANET)
+// 3) ARCANET 위로 이동
+// 4) 아래에서 A -> B -> R -> O 순차 등장
 function runIntroSequence() {
+  const arcanetCombine = document.getElementById("arcanet-combine");
+  const abroRows = document.querySelectorAll(".abro-row[data-seq]");
   if (!arcanetCombine || !abroRows.length) return;
 
-  // 1) ARCADE NETWORK 페이드인
+  // 상태 초기화 (중복 실행 방지)
+  arcanetCombine.classList.remove("visible", "merged", "lift-up");
+  abroRows.forEach((row) => row.classList.remove("show"));
+
+  // 1) 센터에서 ARCADE NETWORK 페이드인
   setTimeout(() => {
     arcanetCombine.classList.add("visible");
-  }, 150);
+  }, 120);
 
-  // 2) DE, WORK 페이드아웃 및 ARCA + NET 합체 -> ARCANET 완성
-  const mergeTime = 1150;
+  // 2) DE, WORK 페이드아웃 및 ARCANET 합체
   setTimeout(() => {
     arcanetCombine.classList.add("merged");
-  }, mergeTime);
+  }, 1050);
 
-  // 3) ARCANET 완성 후 아래에 A -> B -> R -> O 순차 등장
-  const startAbroDelay = mergeTime + 700;
-  const stepInterval = 280;
+  // 3) ARCANET이 위로 올라감
+  setTimeout(() => {
+    arcanetCombine.classList.add("lift-up");
+  }, 1650);
+
+  // 4) A -> B -> R -> O 순서대로 등장
+  const startAbroDelay = 2150;
+  const stepInterval = 260;
 
   abroRows.forEach((row, idx) => {
     setTimeout(() => {
@@ -108,6 +118,7 @@ function runIntroSequence() {
 
 // 3. 마우스 휠 스크롤 연동 스테이지 제어
 const heroStage = document.getElementById("hero-stage");
+const abroMatrix = document.getElementById("abro-matrix");
 const layers = document.querySelectorAll(".stage-layer");
 const dots = document.querySelectorAll(".stage-progress .dot");
 const bgMedia = document.getElementById("bg-media");
@@ -121,12 +132,14 @@ function handleScrollStage() {
   const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
 
   const scale = 1 + progress * 0.14;
-  bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
+  if (bgMedia) bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
 
-  if (progress >= 0.06) {
-    abroMatrix.classList.add("expanded");
-  } else {
-    abroMatrix.classList.remove("expanded");
+  if (abroMatrix) {
+    if (progress >= 0.06) {
+      abroMatrix.classList.add("expanded");
+    } else {
+      abroMatrix.classList.remove("expanded");
+    }
   }
 
   let activeIndex = 0;
@@ -145,6 +158,11 @@ function handleScrollStage() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", runIntroSequence);
+if (document.readyState === "loading") {
+  window.addEventListener("DOMContentLoaded", runIntroSequence);
+} else {
+  runIntroSequence();
+}
+
 window.addEventListener("scroll", handleScrollStage, { passive: true });
 handleScrollStage();
