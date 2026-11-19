@@ -76,34 +76,27 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 초기 시퀀스: ARCANET 페이드인 -> ABRO 전환 -> 세로 A/B/R/O 표시
-const brandMorph = document.getElementById("brand-morph");
+// 2. 초기 시퀀스: Arcanet 페이드 인 -> A -> B -> R -> O 순차 등장
+const arcanetTitle = document.getElementById("arcanet-title");
 const abroMatrix = document.getElementById("abro-matrix");
+const abroRows = document.querySelectorAll(".abro-row[data-seq]");
 
 function runIntroSequence() {
-  if (!brandMorph || !abroMatrix) return;
+  if (!arcanetTitle || !abroRows.length) return;
 
-  // 1) ARCANET 페이드인
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      brandMorph.classList.add("fade-in");
-    }, 150);
+  // 1) Arcanet 페이드 인
+  setTimeout(() => {
+    arcanetTitle.classList.add("visible");
+  }, 150);
 
-    // 2) ABRO 형태로 축약 트랜지션
-    setTimeout(() => {
-      brandMorph.classList.add("to-abro");
-    }, 1150);
+  // 2) Arcanet 등장 이후 A -> B -> R -> O 순서대로 등장
+  const startAbroDelay = 1050;
+  const stepInterval = 280;
 
-    // 3) 세로 A / B / R / O 정렬 레이어로 전환
+  abroRows.forEach((row, idx) => {
     setTimeout(() => {
-      brandMorph.classList.add("hide-morph");
-      abroMatrix.classList.add("vertical-ready");
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          abroMatrix.classList.add("vertical-show");
-        }, 40);
-      });
-    }, 1750);
+      row.classList.add("show");
+    }, startAbroDelay + idx * stepInterval);
   });
 }
 
@@ -124,7 +117,7 @@ function handleScrollStage() {
   const scale = 1 + progress * 0.14;
   bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
 
-  // 휠을 내리면 세로 A/B/R/O 옆 풀 단어 확장
+  // 휠을 내리면 A / B / R / O 옆 풀 단어 확장
   if (progress >= 0.06) {
     abroMatrix.classList.add("expanded");
   } else {
