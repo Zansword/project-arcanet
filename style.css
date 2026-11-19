@@ -155,8 +155,8 @@ html {
 .intro-sequence {
   position: relative;
   width: 100%;
-  max-width: 92vw;
-  height: 400px;
+  max-width: 94vw;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,12 +169,12 @@ html {
   align-items: baseline;
   justify-content: center;
   white-space: nowrap;
-  font-size: clamp(1.7rem, 4.4vw, 3.4rem);
+  font-size: clamp(1.65rem, 4.2vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(115px);
+  transform: translateY(120px);
   transition:
     opacity 0.75s ease,
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
@@ -190,42 +190,44 @@ html {
   align-items: baseline;
 }
 
-/* DE와 WORK: 위로 올라가면서 페이드 아웃 후 공간 축소 */
+/* DE와 WORK: 위로 올라가면서 사라짐 */
 .arcanet-combine .drop {
   display: inline-block;
-  max-width: 5ch;
   opacity: 1;
   transform: translateY(0);
-  overflow: hidden;
   transition:
     transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s ease,
-    max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    opacity 0.4s ease;
 }
 
 .arcanet-combine.drop-out .drop {
-  transform: translateY(-28px);
+  transform: translateY(-34px);
   opacity: 0;
-  max-width: 0;
 }
 
-/* ARCADE 와 NETWORK 사이의 띄어쓰기 (초기에 명확히 보이도록 확보) */
+/* 삭제 단계가 끝난 뒤 레이아웃 폭만 부드럽게 접음 */
+.arcanet-combine.collapse-drop .drop {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ARCADE 와 NETWORK 사이의 띄어쓰기 (처음에 명확히 보이도록 확보) */
 .word-gap {
   display: inline-block;
-  width: 0.55em;
-  min-width: 14px;
-  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1), min-width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0.65em;
+  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ARCA와 NET이 가까워지며 띄어쓰기 제거 + 위로 이동 */
+/* ARCA와 NET이 가까워지며 띄어쓰기 사라지고 위로 이동 */
 .arcanet-combine.merged .word-gap {
   width: 0;
-  min-width: 0;
 }
 
 .arcanet-combine.merged {
   letter-spacing: 0.06em;
-  transform: translateY(-16px);
+  transform: translateY(-18px);
 }
 
 /* 2단계: ARCANET이 올라간 뒤 아래에서 A -> B -> R -> O 순차 등장 */
