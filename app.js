@@ -76,21 +76,27 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 초기 시퀀스: Arcanet 페이드 인 -> A -> B -> R -> O 순차 등장
-const arcanetTitle = document.getElementById("arcanet-title");
+// 2. 초기 시퀀스: ARCADE NETWORK 페이드인 -> DE/WORK 페이드아웃 & ARCANET 합체 -> A/B/R/O 순차 등장
+const arcanetCombine = document.getElementById("arcanet-combine");
 const abroMatrix = document.getElementById("abro-matrix");
 const abroRows = document.querySelectorAll(".abro-row[data-seq]");
 
 function runIntroSequence() {
-  if (!arcanetTitle || !abroRows.length) return;
+  if (!arcanetCombine || !abroRows.length) return;
 
-  // 1) Arcanet 페이드 인
+  // 1) ARCADE NETWORK 페이드인
   setTimeout(() => {
-    arcanetTitle.classList.add("visible");
+    arcanetCombine.classList.add("visible");
   }, 150);
 
-  // 2) Arcanet 등장 이후 A -> B -> R -> O 순서대로 등장
-  const startAbroDelay = 1050;
+  // 2) DE, WORK 페이드아웃 및 ARCA + NET 합체 -> ARCANET 완성
+  const mergeTime = 1150;
+  setTimeout(() => {
+    arcanetCombine.classList.add("merged");
+  }, mergeTime);
+
+  // 3) ARCANET 완성 후 아래에 A -> B -> R -> O 순차 등장
+  const startAbroDelay = mergeTime + 700;
   const stepInterval = 280;
 
   abroRows.forEach((row, idx) => {
@@ -117,7 +123,6 @@ function handleScrollStage() {
   const scale = 1 + progress * 0.14;
   bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
 
-  // 휠을 내리면 A / B / R / O 옆 풀 단어 확장
   if (progress >= 0.06) {
     abroMatrix.classList.add("expanded");
   } else {
