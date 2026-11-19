@@ -37,7 +37,7 @@ const i18nData = {
     "nav.developer": "Developer",
     "nav.support": "Support",
     "hero.hint": "Scroll down to explore the architecture",
-    "pillar.arcade": "Preserving the fading game culture of the arcade era",
+    "pillar.arcade": "Preserve and pass on gaming culture to the next generation",
     "pillar.board": "Optimized architecture built for 3D arcade emulation",
     "pillar.rollback": "Rollback netcode powered by a deterministic architecture",
     "pillar.community": "Independent community infrastructure where users host their own servers",
