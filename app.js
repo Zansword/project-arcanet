@@ -1,4 +1,4 @@
-// 1. 다국어 확장 사전 (추후 ja, zh 등 언어 키만 추가하면 즉시 연동 가능)
+// 1. 다국어 확장 사전
 const i18nData = {
   ko: {
     "nav.intro": "소개문",
@@ -76,9 +76,39 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 마우스 휠 스크롤 연동 스테이지 제어
+// 2. 초기 시퀀스: ARCANET 페이드인 -> ABRO 전환 -> 세로 A/B/R/O 표시
+const brandMorph = document.getElementById("brand-morph");
+const abroMatrix = document.getElementById("abro-matrix");
+
+function runIntroSequence() {
+  if (!brandMorph || !abroMatrix) return;
+
+  // 1) ARCANET 페이드인
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      brandMorph.classList.add("fade-in");
+    }, 150);
+
+    // 2) ABRO 형태로 축약 트랜지션
+    setTimeout(() => {
+      brandMorph.classList.add("to-abro");
+    }, 1150);
+
+    // 3) 세로 A / B / R / O 정렬 레이어로 전환
+    setTimeout(() => {
+      brandMorph.classList.add("hide-morph");
+      abroMatrix.classList.add("vertical-ready");
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          abroMatrix.classList.add("vertical-show");
+        }, 40);
+      });
+    }, 1750);
+  });
+}
+
+// 3. 마우스 휠 스크롤 연동 스테이지 제어
 const heroStage = document.getElementById("hero-stage");
-const abroMatrix = document.querySelector(".abro-matrix");
 const layers = document.querySelectorAll(".stage-layer");
 const dots = document.querySelectorAll(".stage-progress .dot");
 const bgMedia = document.getElementById("bg-media");
@@ -89,21 +119,18 @@ function handleScrollStage() {
   const scrollableDistance = heroStage.offsetHeight - window.innerHeight;
   if (scrollableDistance <= 0) return;
 
-  // 0.0 ~ 1.0 사이 진행률 계산
   const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
 
-  // 배경 미세 확대 패럴랙스
   const scale = 1 + progress * 0.14;
   bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
 
-  // 0.05 이상 스크롤 시 ABRO 옆 풀 단어 페이드 인
-  if (progress >= 0.05) {
+  // 휠을 내리면 세로 A/B/R/O 옆 풀 단어 확장
+  if (progress >= 0.06) {
     abroMatrix.classList.add("expanded");
   } else {
     abroMatrix.classList.remove("expanded");
   }
 
-  // 구간별 레이어 전환 (0: ABRO, 1~4: 4대 핵심 키워드)
   let activeIndex = 0;
   if (progress < 0.24) activeIndex = 0;
   else if (progress < 0.43) activeIndex = 1;
@@ -120,5 +147,6 @@ function handleScrollStage() {
   });
 }
 
+window.addEventListener("DOMContentLoaded", runIntroSequence);
 window.addEventListener("scroll", handleScrollStage, { passive: true });
 handleScrollStage();
