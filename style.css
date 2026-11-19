@@ -151,78 +151,78 @@ html {
   pointer-events: auto;
 }
 
-/* 인트로 시퀀스: 처음엔 센터에서 시작 */
+/* 인트로 시퀀스: 정중앙 시작 */
 .intro-sequence {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* 1단계: ARCADE NETWORK 센터 등장 -> DE/WORK 페이드아웃 & ARCANET 합체 -> 위로 이동 */
+/* 1단계: ARCADE NETWORK 한 줄 정중앙 페이드 인 */
 .arcanet-combine {
-  position: relative;
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  font-size: clamp(2.4rem, 6.2vw, 4.6rem);
+  white-space: nowrap;
+  font-size: clamp(2.3rem, 6.4vw, 5rem);
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(70px);
+  transform: translateY(115px);
   transition:
-    opacity 0.8s ease,
-    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    letter-spacing 0.65s ease,
-    font-size 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.75s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    letter-spacing 0.65s ease;
 }
 
 .arcanet-combine.visible {
   opacity: 1;
 }
 
-.arcanet-combine .part,
-.arcanet-combine .space-gap {
+.word-group {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+/* DE와 WORK: 위로 올라가면서 페이드 아웃 후 공간 축소 */
+.arcanet-combine .drop {
   display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
-}
-
-.arcanet-combine .part.drop-mid {
-  max-width: 3ch;
-  opacity: 1;
-}
-
-.arcanet-combine .part.drop-end {
   max-width: 5ch;
   opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
 }
 
-.arcanet-combine .space-gap {
-  max-width: 0.65ch;
-  opacity: 1;
+.arcanet-combine.drop-out .drop {
+  transform: translateY(-28px);
+  opacity: 0;
+  max-width: 0;
+}
+
+/* ARCADE 와 NETWORK 사이의 띄어쓰기 */
+.word-gap {
+  display: inline-block;
+  width: 0.45em;
+  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ARCA와 NET이 가까워지며 띄어쓰기 제거 + 위로 올라감 */
+.arcanet-combine.merged .word-gap {
+  width: 0;
 }
 
 .arcanet-combine.merged {
-  letter-spacing: 0.08em;
-}
-
-.arcanet-combine.merged .part.drop-mid,
-.arcanet-combine.merged .part.drop-end,
-.arcanet-combine.merged .space-gap {
-  max-width: 0;
-  opacity: 0;
-}
-
-/* ARCANET 합체 후 위로 부드럽게 올라가며 ABRO 자리 확보 */
-.arcanet-combine.lift-up {
-  transform: translateY(-18px);
-  font-size: clamp(2rem, 4.8vw, 3.4rem);
+  letter-spacing: 0.06em;
+  transform: translateY(-16px);
 }
 
 /* 2단계: ARCANET이 올라간 뒤 아래에서 A -> B -> R -> O 순차 등장 */
@@ -231,11 +231,11 @@ html {
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .abro-row {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -243,7 +243,7 @@ html {
   align-items: baseline;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.48s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .abro-row.show {
