@@ -78,15 +78,15 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
 
 // 2. 초기 시퀀스:
 // 1) 정중앙에 ARCADE NETWORK 한 줄 페이드 인
-// 2) DE, WORK가 위로 올라가며 페이드 아웃
-// 3) ARCA와 NET의 띄어쓰기가 사라져 합체되면서 위로 이동
+// 2) DE, WORK가 위로 올라가며 삭제
+// 3) ARCA와 NET이 가까워지며 띄어쓰기가 사라지고 위로 이동
 // 4) 아래에서 A -> B -> R -> O 순차 등장
 function runIntroSequence() {
   const arcanetCombine = document.getElementById("arcanet-combine");
   const abroRows = document.querySelectorAll(".abro-row[data-seq]");
   if (!arcanetCombine || !abroRows.length) return;
 
-  arcanetCombine.classList.remove("visible", "drop-out", "merged");
+  arcanetCombine.classList.remove("visible", "drop-out", "collapse-drop", "merged");
   abroRows.forEach((row) => row.classList.remove("show"));
 
   // 1) 정중앙에 ARCADE NETWORK 페이드 인
@@ -94,15 +94,16 @@ function runIntroSequence() {
     arcanetCombine.classList.add("visible");
   }, 150);
 
-  // 2) DE와 WORK가 위로 올라가면서 삭제
+  // 2) DE와 WORK가 위로 올라가며 페이드 아웃
   setTimeout(() => {
     arcanetCombine.classList.add("drop-out");
   }, 1150);
 
-  // 3) ARCA와 NET이 가까워져 띄어쓰기가 사라지고 위로 올라감
+  // 3) DE/WORK 자리 접기 + ARCA와 NET이 가까워지며 띄어쓰기 제거 + 위로 이동
   setTimeout(() => {
+    arcanetCombine.classList.add("collapse-drop");
     arcanetCombine.classList.add("merged");
-  }, 1650);
+  }, 1600);
 
   // 4) 아래에서 A -> B -> R -> O 순차 등장
   const startAbroDelay = 2250;
