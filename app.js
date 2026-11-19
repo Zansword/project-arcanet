@@ -97,15 +97,15 @@ function runIntroSequence() {
   // 2) DE와 WORK가 위로 올라가면서 삭제
   setTimeout(() => {
     arcanetCombine.classList.add("drop-out");
-  }, 1050);
+  }, 1150);
 
   // 3) ARCA와 NET이 가까워져 띄어쓰기가 사라지고 위로 올라감
   setTimeout(() => {
     arcanetCombine.classList.add("merged");
-  }, 1550);
+  }, 1650);
 
   // 4) 아래에서 A -> B -> R -> O 순차 등장
-  const startAbroDelay = 2150;
+  const startAbroDelay = 2250;
   const stepInterval = 250;
 
   abroRows.forEach((row, idx) => {
