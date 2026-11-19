@@ -44,35 +44,29 @@
           <div class="bg-grid-overlay"></div>
         </div>
 
-        <!-- Step 0: ARCANET 페이드인 -> ABRO 트랜지션 -> 세로 A/B/R/O 정렬 -->
+        <!-- Step 0: Arcanet 페이드 인 -> A -> B -> R -> O 순차 등장 -->
         <div class="stage-layer active" data-step="0">
           <p class="eyebrow">PROJECT ARCANET</p>
 
-          <div class="intro-morph-wrap">
-            <!-- 1차: ARCANET 페이드인 후 ABRO로 축약 트랜지션 -->
-            <div class="brand-morph" id="brand-morph">
-              <span class="morph-letter m-a">A</span>
-              <span class="morph-tail tail-1">RC</span>
-              <span class="morph-letter m-b">A</span>
-              <span class="morph-tail tail-2">NE</span>
-              <span class="morph-letter m-r">T</span>
-            </div>
+          <div class="intro-sequence">
+            <!-- 1단계: Arcanet 단독 페이드 인 -->
+            <div class="arcanet-title" id="arcanet-title">Arcanet</div>
 
-            <!-- 2차: 세로 A / B / R / O 매트릭스 -->
+            <!-- 2단계: A -> B -> R -> O 순차 페이드 인 -->
             <div class="abro-matrix" id="abro-matrix">
-              <div class="abro-row">
+              <div class="abro-row" data-seq="0">
                 <span class="initial">A</span>
                 <span class="word-expand">rcade</span>
               </div>
-              <div class="abro-row">
+              <div class="abro-row" data-seq="1">
                 <span class="initial">B</span>
                 <span class="word-expand">oard</span>
               </div>
-              <div class="abro-row">
+              <div class="abro-row" data-seq="2">
                 <span class="initial">R</span>
                 <span class="word-expand">ust and Rollback</span>
               </div>
-              <div class="abro-row">
+              <div class="abro-row" data-seq="3">
                 <span class="initial">O</span>
                 <span class="word-expand">ptimization</span>
               </div>
