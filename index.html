@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- 상단 고정 내비게이션 (Apple 스타일) -->
+  <!-- 상단 고정 내비게이션 -->
   <header class="top-nav">
     <div class="nav-inner">
-      <!-- 좌측 홈 아이콘 -->
       <a href="#top" class="brand-logo" aria-label="Project Arcanet Home">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
@@ -18,7 +17,6 @@
         </svg>
       </a>
 
-      <!-- 중앙 7개 카테고리 메뉴 -->
       <nav class="nav-links" aria-label="Primary Navigation">
         <a href="#intro" data-i18n="nav.intro">소개문</a>
         <a href="#overview" data-i18n="nav.overview">설명</a>
@@ -29,7 +27,6 @@
         <a href="#support" data-i18n="nav.support">후원</a>
       </nav>
 
-      <!-- 우측 다국어 확장 탭 -->
       <div class="lang-switcher">
         <button type="button" class="lang-btn active" data-lang="ko">KO</button>
         <span class="divider">/</span>
@@ -42,36 +39,50 @@
     <!-- 휠 연동형 키 비주얼 스테이지 -->
     <section class="scroll-stage" id="hero-stage">
       <div class="sticky-viewport">
-        <!-- 배경 미디어 슬롯 (추후 video 또는 고해상도 이미지 교체용) -->
+        <!-- 배경 미디어 슬롯 -->
         <div class="bg-media-slot" id="bg-media">
           <div class="bg-grid-overlay"></div>
         </div>
 
-        <!-- Step 1 & 2: ABRO -> 풀 단어 페이드 인 -->
+        <!-- Step 0: ARCANET 페이드인 -> ABRO 트랜지션 -> 세로 A/B/R/O 정렬 -->
         <div class="stage-layer active" data-step="0">
           <p class="eyebrow">PROJECT ARCANET</p>
-          <div class="abro-matrix">
-            <div class="abro-row">
-              <span class="initial">A</span>
-              <span class="word-expand">rcade</span>
+
+          <div class="intro-morph-wrap">
+            <!-- 1차: ARCANET 페이드인 후 ABRO로 축약 트랜지션 -->
+            <div class="brand-morph" id="brand-morph">
+              <span class="morph-letter m-a">A</span>
+              <span class="morph-tail tail-1">RC</span>
+              <span class="morph-letter m-b">A</span>
+              <span class="morph-tail tail-2">NE</span>
+              <span class="morph-letter m-r">T</span>
             </div>
-            <div class="abro-row">
-              <span class="initial">B</span>
-              <span class="word-expand">oard</span>
-            </div>
-            <div class="abro-row">
-              <span class="initial">R</span>
-              <span class="word-expand">ust and Rollback</span>
-            </div>
-            <div class="abro-row">
-              <span class="initial">O</span>
-              <span class="word-expand">ptimization</span>
+
+            <!-- 2차: 세로 A / B / R / O 매트릭스 -->
+            <div class="abro-matrix" id="abro-matrix">
+              <div class="abro-row">
+                <span class="initial">A</span>
+                <span class="word-expand">rcade</span>
+              </div>
+              <div class="abro-row">
+                <span class="initial">B</span>
+                <span class="word-expand">oard</span>
+              </div>
+              <div class="abro-row">
+                <span class="initial">R</span>
+                <span class="word-expand">ust and Rollback</span>
+              </div>
+              <div class="abro-row">
+                <span class="initial">O</span>
+                <span class="word-expand">ptimization</span>
+              </div>
             </div>
           </div>
+
           <p class="scroll-hint" data-i18n="hero.hint">마우스 휠을 내려 아키텍처를 탐색하세요</p>
         </div>
 
-        <!-- Step 3: 4대 핵심 키워드 순차 전환 -->
+        <!-- Step 1~4: 4대 핵심 키워드 순차 전환 -->
         <div class="stage-layer" data-step="1">
           <span class="pillar-badge">01 / 04</span>
           <h2 class="pillar-title">Arcade</h2>
@@ -96,7 +107,7 @@
           <p class="pillar-desc" data-i18n="pillar.community">유저들이 서버를 개설하고 형성되는 독자적인 커뮤니티 인프라</p>
         </div>
 
-        <!-- 진행도 인디케이터 -->
+        <!-- 우측 진행도 인디케이터 -->
         <div class="stage-progress">
           <span class="dot active" data-dot="0"></span>
           <span class="dot" data-dot="1"></span>
