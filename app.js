@@ -78,9 +78,9 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
 
 // 2. 초기 시퀀스:
 // 1) 정중앙에 ARCADE NETWORK 한 줄 페이드 인
-// 2) DE, WORK 페이드 아웃 & 폭 축소 + 띄어쓰기 제거로 정중앙에서 ARCANET 완성
-// 3) 완성된 ARCANET이 위로 수직 이동
-// 4) 아래에서 A -> B -> R -> O 순차 등장
+// 2) DE, WORK 위로 빠지며 페이드 아웃 & 느리게 합쳐져 ARCANET 완성
+// 3) 정중앙에서 약 0.65s 대기
+// 4) 0.7배속(약 1.1s)으로 위로 올라간 뒤 A -> B -> R -> O 순차 등장
 function runIntroSequence() {
   const arcanetCombine = document.getElementById("arcanet-combine");
   const abroRows = document.querySelectorAll(".abro-row[data-seq]");
@@ -92,27 +92,28 @@ function runIntroSequence() {
   // 1) 정중앙에 ARCADE NETWORK 페이드 인
   setTimeout(() => {
     arcanetCombine.classList.add("visible");
-  }, 150);
+  }, 200);
 
   // 2) DE와 WORK 위로 올라가며 페이드 아웃
   setTimeout(() => {
     arcanetCombine.classList.add("drop-out");
-  }, 1100);
+  }, 1450);
 
-  // 3) 정중앙 자리에서 DE/WORK 접고 띄어쓰기 제거 -> ARCANET 완성
+  // 3) DE/WORK 자리 느리게 접고 띄어쓰기 제거 -> 정중앙에서 ARCANET 완성
   setTimeout(() => {
     arcanetCombine.classList.add("collapse-drop");
     arcanetCombine.classList.add("merged");
-  }, 1500);
-
-  // 4) ARCANET 완성 후 위로 이동
-  setTimeout(() => {
-    arcanetCombine.classList.add("lift-up");
   }, 2050);
 
-  // 5) 아래에서 A -> B -> R -> O 순서대로 등장
-  const startAbroDelay = 2600;
-  const stepInterval = 250;
+  // 4) ARCANET 완성 후 정중앙에서 약 0.65초 대기 뒤 0.7배속으로 위로 이동
+  const liftStartTime = 2050 + 1050 + 650; // 3750ms
+  setTimeout(() => {
+    arcanetCombine.classList.add("lift-up");
+  }, liftStartTime);
+
+  // 5) 위로 올라가는 동작(약 1.1s)이 자리 잡은 뒤 A -> B -> R -> O 순차 등장
+  const startAbroDelay = liftStartTime + 1150; // 4900ms
+  const stepInterval = 340;
 
   abroRows.forEach((row, idx) => {
     setTimeout(() => {
