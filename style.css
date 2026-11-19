@@ -150,90 +150,59 @@ html {
   font-size: 13px;
   letter-spacing: 0.28em;
   color: var(--accent);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   font-weight: 600;
 }
 
-/* 인트로 트랜지션 래퍼 */
-.intro-morph-wrap {
-  position: relative;
-  min-height: 290px;
+/* 인트로 시퀀스 컨테이너 */
+.intro-sequence {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
+  min-height: 310px;
 }
 
-/* 1차: ARCANET 페이드인 */
-.brand-morph {
-  display: inline-flex;
-  align-items: baseline;
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+/* 1단계: Arcanet 페이드 인 */
+.arcanet-title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(12px) scale(0.98);
-  transition: opacity 0.8s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.7s ease;
+  transform: translateY(12px);
+  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.brand-morph.fade-in {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* ARCANET에서 불필요한 글자 접으며 ABRO 축약감 부여 */
-.brand-morph.to-abro {
-  letter-spacing: 0.06em;
-}
-
-.brand-morph.to-abro .morph-tail {
-  max-width: 0;
-  opacity: 0;
-  margin: 0;
-  overflow: hidden;
-  transition: max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
-}
-
-.morph-tail {
-  display: inline-block;
-  max-width: 3ch;
-  opacity: 1;
-}
-
-.brand-morph.hide-morph {
-  opacity: 0;
-  transform: scale(0.92);
-  pointer-events: none;
-  position: absolute;
-}
-
-/* 2차: 세로 A / B / R / O 매트릭스 */
-.abro-matrix {
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.abro-matrix.vertical-ready {
-  display: inline-flex;
-}
-
-.abro-matrix.vertical-show {
+.arcanet-title.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* 2단계: A -> B -> R -> O 순차 등장 */
+.abro-matrix {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
 .abro-row {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.02em;
   display: flex;
   align-items: baseline;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.abro-row.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .abro-row .initial {
@@ -255,7 +224,7 @@ html {
 }
 
 .scroll-hint {
-  margin-top: 32px;
+  margin-top: 28px;
   font-size: 13px;
   color: var(--text-secondary);
 }
