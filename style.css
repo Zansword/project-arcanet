@@ -177,8 +177,8 @@ html {
   transform: translateY(120px);
   transition:
     opacity 0.75s ease,
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    letter-spacing 0.65s ease;
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    letter-spacing 0.55s ease;
 }
 
 .arcanet-combine.visible {
@@ -190,47 +190,50 @@ html {
   align-items: baseline;
 }
 
-/* DE와 WORK: 위로 올라가면서 사라짐 */
+/* DE와 WORK: 위로 올라가며 페이드 아웃 */
 .arcanet-combine .drop {
   display: inline-block;
   opacity: 1;
   transform: translateY(0);
   transition:
-    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s ease;
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
 }
 
 .arcanet-combine.drop-out .drop {
-  transform: translateY(-34px);
+  transform: translateY(-28px);
   opacity: 0;
 }
 
-/* 삭제 단계가 끝난 뒤 레이아웃 폭만 부드럽게 접음 */
+/* 정중앙 위치(translateY(120px))를 유지한 채 DE/WORK 폭을 접고 띄어쓰기 제거 -> ARCANET 완성 */
 .arcanet-combine.collapse-drop .drop {
   display: inline-block;
   width: 0;
   overflow: hidden;
-  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 0.38s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ARCADE 와 NETWORK 사이의 띄어쓰기 (처음에 명확히 보이도록 확보) */
 .word-gap {
   display: inline-block;
   width: 0.65em;
-  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ARCA와 NET이 가까워지며 띄어쓰기 사라지고 위로 이동 */
 .arcanet-combine.merged .word-gap {
   width: 0;
 }
 
 .arcanet-combine.merged {
   letter-spacing: 0.06em;
+  transform: translateY(120px);
+}
+
+/* 2단계: 정중앙에서 ARCANET이 완성된 뒤 수직으로 위로 이동 */
+.arcanet-combine.lift-up {
   transform: translateY(-18px);
 }
 
-/* 2단계: ARCANET이 올라간 뒤 아래에서 A -> B -> R -> O 순차 등장 */
+/* 3단계: ARCANET이 올라간 뒤 아래에서 A -> B -> R -> O 순차 등장 */
 .abro-matrix {
   display: inline-flex;
   flex-direction: column;
