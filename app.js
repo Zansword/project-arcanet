@@ -74,7 +74,6 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 초기 시퀀스: 통합 합체 및 상승 -> A/B/R/O 및 풀네임 자동 표시
 function runIntroSequence() {
   const arcanetCombine = document.getElementById("arcanet-combine");
   const abroMatrix = document.getElementById("abro-matrix");
@@ -85,24 +84,19 @@ function runIntroSequence() {
   abroRows.forEach((row) => row.classList.remove("show"));
   if (abroMatrix) abroMatrix.classList.remove("expanded");
 
-  // 0.05s: 정중앙 페이드 인 및 상승 예약
+  // 0.05s: ARCADE NETWORK 정중앙 페이드 인 및 3.2s 시점 상승 예약
   setTimeout(() => {
     arcanetCombine.classList.add("visible", "lift-up");
   }, 50);
 
-  // 0.9s: DE, WORK 사라지며 폭 축소 시작
+  // 1.1s: DE, WORK 소멸과 동시에 공백을 닫아 바로 ARCANET으로 합체
   setTimeout(() => {
-    arcanetCombine.classList.add("drop-out");
-  }, 900);
+    arcanetCombine.classList.add("drop-out", "merged");
+  }, 1100);
 
-  // 1.55s: 단어가 빠지는 흐름에 바로 이어서 ARCA + NET 합체
-  setTimeout(() => {
-    arcanetCombine.classList.add("merged");
-  }, 1550);
-
-  // 5.0s 이후: A -> B -> R -> O 순차 등장 및 풀네임 자동 확장
-  const startAbroDelay = 5050;
-  const stepInterval = 280;
+  // 4.4s 이후: A -> B -> R -> O 천천히 순차 등장
+  const startAbroDelay = 4400;
+  const stepInterval = 680;
 
   abroRows.forEach((row, idx) => {
     setTimeout(() => {
@@ -110,9 +104,10 @@ function runIntroSequence() {
     }, startAbroDelay + idx * stepInterval);
   });
 
+  // 모든 이니셜 등장 후 풀네임(rcade / oard / ust and rollback / ptimization) 부드럽게 확장
   setTimeout(() => {
     if (abroMatrix) abroMatrix.classList.add("expanded");
-  }, startAbroDelay + abroRows.length * stepInterval + 120);
+  }, startAbroDelay + abroRows.length * stepInterval + 250);
 }
 
 // 3. 마우스 휠 스크롤 연동 프레젠테이션 스테이지 제어
