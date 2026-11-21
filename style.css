@@ -450,9 +450,15 @@ body {
 }
 
 @media (max-width: 768px) {
-  .stage-layer {
-    padding: 0 22px;
+  .intro-sequence {
+    min-height: 340px;
+    padding-bottom: 36px;
   }
+
+  .abro-row {
+    font-size: clamp(1.35rem, 5.4vw, 2.15rem);
+  }
+}
 
   .arcanet-combine {
     font-size: clamp(0.82rem, 4.1vw, 1.5rem);
