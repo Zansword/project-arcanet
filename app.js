@@ -85,18 +85,22 @@ function runIntroSequence() {
   abroRows.forEach((row) => row.classList.remove("show"));
   if (abroMatrix) abroMatrix.classList.remove("expanded");
 
+  // 0.05s: 정중앙 페이드 인 및 상승 예약
   setTimeout(() => {
     arcanetCombine.classList.add("visible", "lift-up");
   }, 50);
 
+  // 0.9s: DE, WORK 사라지며 폭 축소 시작
   setTimeout(() => {
     arcanetCombine.classList.add("drop-out");
-  }, 1000);
+  }, 900);
 
+  // 1.55s: 단어가 빠지는 흐름에 바로 이어서 ARCA + NET 합체
   setTimeout(() => {
     arcanetCombine.classList.add("merged");
-  }, 2400);
+  }, 1550);
 
+  // 5.0s 이후: A -> B -> R -> O 순차 등장 및 풀네임 자동 확장
   const startAbroDelay = 5050;
   const stepInterval = 280;
 
@@ -106,7 +110,6 @@ function runIntroSequence() {
     }, startAbroDelay + idx * stepInterval);
   });
 
-  // 마우스 호버 없이도 arcade / board / rust and rollback / optimization 자동 확장
   setTimeout(() => {
     if (abroMatrix) abroMatrix.classList.add("expanded");
   }, startAbroDelay + abroRows.length * stepInterval + 120);
