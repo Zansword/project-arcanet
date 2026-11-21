@@ -531,29 +531,34 @@ body {
   .arcanet-combine {
     font-size: clamp(0.82rem, 4.1vw, 1.5rem);
     letter-spacing: 0.01em;
-    transform: translateY(85px);
+    transform: translateY(78px);
   }
 
   @keyframes fadeInCenter {
     from {
       opacity: 0;
-      transform: translateY(85px);
+      transform: translateY(78px);
     }
     to {
       opacity: 1;
-      transform: translateY(85px);
+      transform: translateY(78px);
     }
   }
 
   @keyframes liftArcanetVertically {
     from {
       opacity: 1;
-      transform: translateY(85px);
+      transform: translateY(78px);
     }
     to {
       opacity: 1;
       transform: translateY(-14px);
     }
+  }
+
+  .scroll-hint {
+    bottom: 22px;
+    font-size: 12px;
   }
 }
 
