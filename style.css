@@ -114,83 +114,10 @@ body {
 }
 
 /* 프레젠테이션형 휠 스크롤 스테이지 */
+/* 프레젠테이션형 휠 스크롤 스테이지 (슬라이드 9개 분량 넉넉한 구간 확보) */
 .scroll-stage {
   position: relative;
-  height: 850vh;
-}
-
-.sticky-viewport {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 배경 미디어 & 반투명 이미지 슬롯 */
-.bg-media-slot {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 45%, #182032 0%, #0a0a0c 78%);
-  transition: transform 0.65s ease-out;
-  z-index: 0;
-}
-
-.bg-showcase-image {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  filter: saturate(0.85) contrast(1.06);
-  transition: opacity 0.65s ease, background-image 0.3s ease;
-  z-index: 0;
-}
-
-.bg-showcase-image.has-image {
-  opacity: 0.24;
-}
-
-.bg-vignette-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(10, 10, 12, 0.35) 0%, rgba(10, 10, 12, 0.88) 100%);
-  z-index: 1;
-}
-
-.bg-grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-  z-index: 2;
-}
-
-.stage-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 38px;
-  opacity: 0;
-  transform: translateY(22px) scale(0.985);
-  pointer-events: none;
-  transition: opacity 0.48s ease, transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.stage-layer.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+  height: 1350vh;
 }
 
 /* 인트로 시퀀스: 통합 합체 및 상승 */
@@ -198,7 +125,8 @@ body {
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-height: 320px;
+  min-height: 410px;
+  padding-bottom: 44px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,7 +177,7 @@ body {
   }
   to {
     opacity: 1;
-    transform: translateY(-18px);
+    transform: translateY(-22px);
   }
 }
 
@@ -258,7 +186,6 @@ body {
   align-items: baseline;
 }
 
-/* [핵심 수정] WORK의 W, K 폭이 5ch보다 넓어 K가 잘리던 문제를 10ch로 해결 */
 .arcanet-combine .drop {
   display: inline-block;
   max-width: 10ch;
@@ -291,20 +218,20 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* A / B / R / O 순차 등장 및 풀네임 확장 */
+/* ABRO 글씨 크기 확대 */
 .abro-matrix {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 10px;
+  margin-top: 12px;
   max-width: 100%;
 }
 
 .abro-row {
-  font-size: clamp(1.25rem, 3.8vw, 2.75rem);
+  font-size: clamp(1.55rem, 4.6vw, 3.35rem);
   font-weight: 800;
-  line-height: 1.18;
+  line-height: 1.16;
   letter-spacing: -0.01em;
   display: flex;
   align-items: baseline;
@@ -339,10 +266,9 @@ body {
   max-width: 85vw;
 }
 
-/* [핵심 수정] 하단 마우스 휠 안내 문구가 밀려나거나 사라지지 않도록 하단 고정 배치 */
 .scroll-hint {
   position: absolute;
-  bottom: 32px;
+  bottom: 26px;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
