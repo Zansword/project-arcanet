@@ -19,9 +19,8 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#hero-stage" data-i18n="nav.architecture">아키텍처</a>
-        <a href="#goals" data-i18n="nav.goals">목표</a>
-        <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" data-i18n="nav.releases">릴리즈</a>
+        <a href="#hero-stage" data-i18n="nav.stage">스테이지</a>
+        <a href="#releases" data-i18n="nav.releases">릴리즈</a>
       </nav>
 
       <div class="lang-switcher">
@@ -33,16 +32,18 @@
   </header>
 
   <main id="top">
-    <!-- 휠 연동형 키 비주얼 스테이지 -->
+    <!-- 휠 연동형 프레젠테이션 스테이지 -->
     <section class="scroll-stage" id="hero-stage">
       <div class="sticky-viewport">
-        <!-- 배경 미디어 슬롯 -->
+        <!-- 배경 레이어: 기본 그리드 + 반투명 게임/아케이드 이미지 슬롯 -->
         <div class="bg-media-slot" id="bg-media">
+          <div class="bg-showcase-image" id="bg-showcase-image"></div>
+          <div class="bg-vignette-overlay"></div>
           <div class="bg-grid-overlay"></div>
         </div>
 
-        <!-- Step 0: ARCADE NETWORK -> DE/WORK 상승 소멸 -> ARCANET 합체 및 상승 -> A/B/R/O 순차 등장 -->
-        <div class="stage-layer active" data-step="0">
+        <!-- Step 0: ARCADE NETWORK -> ARCANET -> A/B/R/O 인트로 -->
+        <div class="stage-layer active" data-step="0" data-bg-image="">
           <div class="intro-sequence">
             <div class="arcanet-combine" id="arcanet-combine">
               <span class="word-group left-group">
@@ -74,94 +75,98 @@
             </div>
           </div>
 
-          <p class="scroll-hint" data-i18n="hero.hint">마우스 휠을 내려 아키텍처를 탐색하세요</p>
+          <p class="scroll-hint" data-i18n="hero.hint">마우스 휠을 내려 프레젠테이션을 넘기세요</p>
         </div>
 
-        <!-- Step 1~4: 4대 핵심 키워드 순차 전환 -->
-        <div class="stage-layer" data-step="1">
+        <!-- Step 1~4: 4대 핵심 키워드 -->
+        <div class="stage-layer" data-step="1" data-bg-image="">
           <span class="pillar-badge">01 / 04</span>
           <h2 class="pillar-title">Arcade</h2>
           <p class="pillar-desc" data-i18n="pillar.arcade">사라져가는 아케이드 시대의 게임 문화 보존과 계승</p>
         </div>
 
-        <div class="stage-layer" data-step="2">
+        <div class="stage-layer" data-step="2" data-bg-image="">
           <span class="pillar-badge">02 / 04</span>
           <h2 class="pillar-title">Board Architecture</h2>
           <p class="pillar-desc" data-i18n="pillar.board">3D 아케이드 에뮬레이션을 위한 최적화된 아키텍처</p>
         </div>
 
-        <div class="stage-layer" data-step="3">
+        <div class="stage-layer" data-step="3" data-bg-image="">
           <span class="pillar-badge">03 / 04</span>
           <h2 class="pillar-title">Rollback Netcode</h2>
           <p class="pillar-desc" data-i18n="pillar.rollback">결정론적 구조를 통해 지원되는 Rollback 넷코드</p>
         </div>
 
-        <div class="stage-layer" data-step="4">
+        <div class="stage-layer" data-step="4" data-bg-image="">
           <span class="pillar-badge">04 / 04</span>
           <h2 class="pillar-title">Organize Community</h2>
           <p class="pillar-desc" data-i18n="pillar.community">유저들이 서버를 개설하고 형성되는 독자적인 커뮤니티 인프라</p>
         </div>
 
+        <!-- Step 5: ARCANET의 목표 인트로 슬라이드 -->
+        <div class="stage-layer" data-step="5" data-bg-image="">
+          <span class="section-eyebrow" data-i18n="goals.eyebrow">Arcanet is Heading to...</span>
+          <h2 class="slide-main-title" data-i18n="goals.title">ARCANET의 목표</h2>
+        </div>
+
+        <!-- Step 6: 01 Up to 4 players netplay (게임 타이틀 텍스트 제거 + 반투명 배경 이미지 슬롯) -->
+        <div class="stage-layer" data-step="6" data-bg-image="assets/bg-4p-netplay.jpg">
+          <span class="pillar-badge">GOAL 01 / 04</span>
+          <p class="slide-en-sub" data-i18n="card1.en">Up to 4 players netplay</p>
+          <h2 class="pillar-title" data-i18n="card1.title">3~4인 다중 멀티플레이</h2>
+        </div>
+
+        <!-- Step 7: 02 Life to forgotten 3D Hardware (게임 타이틀 텍스트 제거 + 반투명 배경 이미지 슬롯) -->
+        <div class="stage-layer" data-step="7" data-bg-image="assets/bg-3d-hardware.jpg">
+          <span class="pillar-badge">GOAL 02 / 04</span>
+          <p class="slide-en-sub" data-i18n="card2.en">Life to forgotten 3D Hardware</p>
+          <h2 class="pillar-title" data-i18n="card2.title">잊혀진 3D 아케이드 하드웨어</h2>
+        </div>
+
+        <!-- Step 8: 03 Infrastructure of Arcade Netplay -->
+        <div class="stage-layer" data-step="8" data-bg-image="assets/bg-netplay-infra.jpg">
+          <span class="pillar-badge">GOAL 03 / 04</span>
+          <p class="slide-en-sub" data-i18n="card3.en">Infrastructure of Arcade Netplay</p>
+          <h2 class="pillar-title" data-i18n="card3.title">아케이드 넷플레이 인프라</h2>
+        </div>
+
+        <!-- Step 9: 04 Retro Communities Ark -->
+        <div class="stage-layer" data-step="9" data-bg-image="assets/bg-community-ark.jpg">
+          <span class="pillar-badge">GOAL 04 / 04</span>
+          <p class="slide-en-sub" data-i18n="card4.en">Retro Communities Ark</p>
+          <h2 class="pillar-title" data-i18n="card4.title">레트로 커뮤니티의 방주</h2>
+          <p class="pillar-desc" data-i18n="card4.quote">
+            서버를 사용자들이 개설함으로써, 세대를 거쳐 계승되는 PLAYGROUND
+          </p>
+        </div>
+
         <!-- 우측 진행도 인디케이터 -->
-        <div class="stage-progress" aria-label="Stage progress">
-          <button type="button" class="dot active" data-dot="0" aria-label="Step 1"></button>
-          <button type="button" class="dot" data-dot="1" aria-label="Step 2"></button>
-          <button type="button" class="dot" data-dot="2" aria-label="Step 3"></button>
-          <button type="button" class="dot" data-dot="3" aria-label="Step 4"></button>
-          <button type="button" class="dot" data-dot="4" aria-label="Step 5"></button>
+        <div class="stage-progress" aria-label="Presentation slides">
+          <button type="button" class="dot active" data-dot="0" aria-label="Slide 1"></button>
+          <button type="button" class="dot" data-dot="1" aria-label="Slide 2"></button>
+          <button type="button" class="dot" data-dot="2" aria-label="Slide 3"></button>
+          <button type="button" class="dot" data-dot="3" aria-label="Slide 4"></button>
+          <button type="button" class="dot" data-dot="4" aria-label="Slide 5"></button>
+          <button type="button" class="dot" data-dot="5" aria-label="Slide 6"></button>
+          <button type="button" class="dot" data-dot="6" aria-label="Slide 7"></button>
+          <button type="button" class="dot" data-dot="7" aria-label="Slide 8"></button>
+          <button type="button" class="dot" data-dot="8" aria-label="Slide 9"></button>
+          <button type="button" class="dot" data-dot="9" aria-label="Slide 10"></button>
         </div>
       </div>
     </section>
 
-    <!-- ARCANET의 목표 섹션 -->
-    <section id="goals" class="content-section">
+    <!-- 하단 릴리즈 섹션 -->
+    <section id="releases" class="release-section">
       <div class="container">
-        <span class="section-eyebrow" data-i18n="goals.eyebrow">Arcanet is Heading to...</span>
-        <h2 data-i18n="goals.title">ARCANET의 목표</h2>
-
-        <div class="goal-cards-grid">
-          <!-- 카드 1 -->
-          <article class="goal-card">
-            <span class="card-index">01</span>
-            <p class="card-en" data-i18n="card1.en">Up to 4 players netplay</p>
-            <h3 data-i18n="card1.title">3~4인 다중 멀티플레이</h3>
-            <p class="card-titles" data-i18n="card1.games">던전 앤 드래곤 / 닌자 베이스볼 배트맨</p>
-          </article>
-
-          <!-- 카드 2 -->
-          <article class="goal-card">
-            <span class="card-index">02</span>
-            <p class="card-en" data-i18n="card2.en">Life to forgotten 3D Hardware</p>
-            <h3 data-i18n="card2.title">잊혀진 3D 아케이드 하드웨어</h3>
-            <p class="card-titles" data-i18n="card2.games">테크로맨서 / 동물철권 / 철권 2</p>
-          </article>
-
-          <!-- 카드 3 -->
-          <article class="goal-card">
-            <span class="card-index">03</span>
-            <p class="card-en" data-i18n="card3.en">Infrastructure of Arcade Netplay</p>
-            <h3 data-i18n="card3.title">아케이드 넷플레이 인프라</h3>
-            <p class="card-desc" data-i18n="card3.desc">
-              안정적이고 저지연의 아케이드 네트워크 플레이 기반을 구축합니다.
-            </p>
-          </article>
-
-          <!-- 카드 4 -->
-          <article class="goal-card featured-card">
-            <span class="card-index">04</span>
-            <p class="card-en" data-i18n="card4.en">Retro Communities Ark</p>
-            <h3 data-i18n="card4.title">레트로 커뮤니티의 방주</h3>
-            <p class="card-quote" data-i18n="card4.quote">
-              서버를 사용자들이 개설함으로써, 세대를 거쳐 계승되는 PLAYGROUND
-            </p>
-          </article>
-        </div>
-
-        <div class="section-cta-wrap">
-          <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" class="cta-btn" data-i18n="sec.download.btn">
-            GitHub Releases 바로가기
-          </a>
-        </div>
+        <span class="section-eyebrow" data-i18n="release.eyebrow">PROJECT ARCANET</span>
+        <h2 data-i18n="release.title">릴리즈 및 저장소</h2>
+        <p class="release-desc" data-i18n="release.desc">
+          최신 바이너리 릴리즈와 업데이트 내역은 GitHub Releases에서 확인할 수 있습니다.
+        </p>
+        <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" class="cta-btn" data-i18n="sec.download.btn">
+          GitHub Releases 바로가기
+        </a>
       </div>
     </section>
   </main>
