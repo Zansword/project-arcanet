@@ -1,60 +1,54 @@
 // 1. 다국어 확장 사전
 const i18nData = {
   ko: {
-    "nav.intro": "소개문",
-    "nav.overview": "설명",
-    "nav.components": "구성요소",
-    "nav.download": "다운로드",
-    "nav.process": "개발과정",
-    "nav.developer": "개발자",
-    "nav.support": "후원",
+    "nav.architecture": "아키텍처",
+    "nav.goals": "목표",
+    "nav.releases": "릴리즈",
     "hero.hint": "마우스 휠을 내려 아키텍처를 탐색하세요",
     "pillar.arcade": "사라져가는 아케이드 시대의 게임 문화 보존과 계승",
     "pillar.board": "3D 아케이드 에뮬레이션을 위한 최적화된 아키텍처",
     "pillar.rollback": "결정론적 구조를 통해 지원되는 Rollback 넷코드",
     "pillar.community": "유저들이 서버를 개설하고 형성되는 독자적인 커뮤니티 인프라",
-    "sec.intro.title": "소개문",
-    "sec.intro.body": "Project Arcanet의 시작과 환영 인사말이 들어갈 영역입니다.",
-    "sec.overview.title": "설명",
-    "sec.overview.body": "에뮬레이터의 전체적인 목적과 핵심 설계 철학이 들어갈 영역입니다.",
-    "sec.components.title": "구성요소",
-    "sec.download.title": "다운로드",
-    "sec.download.body": "최신 릴리즈 바이너리 및 실행 사양, 라이선스 안내가 들어갈 영역입니다.",
-    "sec.download.btn": "GitHub Releases 바로가기",
-    "sec.process.title": "개발 과정",
-    "sec.process.body": "과거 포크 프로젝트 분석에서 독자적 아케이드 보드 재구축 및 사후 소스 공개 로드맵까지의 기록입니다.",
-    "sec.developer.title": "About Developer",
-    "sec.developer.body": "개발자 소개 및 엔지니어링 철학이 들어갈 영역입니다.",
-    "sec.support.title": "후원 (Coffee)",
-    "sec.support.body": "프로젝트의 지속적인 연구와 인프라 유지를 위한 자발적 후원 안내 영역입니다."
+    "goals.eyebrow": "Arcanet is Heading to...",
+    "goals.title": "ARCANET의 목표",
+    "card1.en": "Up to 4 players netplay",
+    "card1.title": "3~4인 다중 멀티플레이",
+    "card1.games": "던전 앤 드래곤 / 닌자 베이스볼 배트맨",
+    "card2.en": "Life to forgotten 3D Hardware",
+    "card2.title": "잊혀진 3D 아케이드 하드웨어",
+    "card2.games": "테크로맨서 / 동물철권 / 철권 2",
+    "card3.en": "Infrastructure of Arcade Netplay",
+    "card3.title": "아케이드 넷플레이 인프라",
+    "card3.desc": "안정적이고 저지연의 아케이드 네트워크 플레이 기반을 구축합니다.",
+    "card4.en": "Retro Communities Ark",
+    "card4.title": "레트로 커뮤니티의 방주",
+    "card4.quote": "서버를 사용자들이 개설함으로써, 세대를 거쳐 계승되는 PLAYGROUND",
+    "sec.download.btn": "GitHub Releases 바로가기"
   },
   en: {
-    "nav.intro": "Intro",
-    "nav.overview": "Overview",
-    "nav.components": "Components",
-    "nav.download": "Download",
-    "nav.process": "Dev Process",
-    "nav.developer": "Developer",
-    "nav.support": "Support",
+    "nav.architecture": "Architecture",
+    "nav.goals": "Goals",
+    "nav.releases": "Releases",
     "hero.hint": "Scroll down to explore the architecture",
     "pillar.arcade": "Preserve and pass on gaming culture to the next generation",
     "pillar.board": "Optimized architecture built for 3D arcade emulation",
     "pillar.rollback": "Rollback netcode powered by a deterministic architecture",
     "pillar.community": "Independent community infrastructure where users host their own servers",
-    "sec.intro.title": "Introduction",
-    "sec.intro.body": "Welcome message and opening statement for Project Arcanet.",
-    "sec.overview.title": "Overview",
-    "sec.overview.body": "Core objectives and architectural philosophy of the emulator.",
-    "sec.components.title": "Components",
-    "sec.download.title": "Download",
-    "sec.download.body": "Latest binary releases, system requirements, and licensing terms.",
-    "sec.download.btn": "Go to GitHub Releases",
-    "sec.process.title": "Development Process",
-    "sec.process.body": "Journey from legacy fork research to proprietary arcade board reconstruction and future source release.",
-    "sec.developer.title": "About Developer",
-    "sec.developer.body": "Developer background and low-level systems engineering philosophy.",
-    "sec.support.title": "Support (Coffee)",
-    "sec.support.body": "Voluntary support to sustain ongoing research and infrastructure."
+    "goals.eyebrow": "Arcanet is Heading to...",
+    "goals.title": "ARCANET Goals",
+    "card1.en": "Up to 4 players netplay",
+    "card1.title": "Up to 4 Players Netplay",
+    "card1.games": "Dungeons & Dragons / Ninja Baseball Batman",
+    "card2.en": "Life to forgotten 3D Hardware",
+    "card2.title": "Life to Forgotten 3D Hardware",
+    "card2.games": "Tech Romancer / Bloody Roar / Tekken 2",
+    "card3.en": "Infrastructure of Arcade Netplay",
+    "card3.title": "Infrastructure of Arcade Netplay",
+    "card3.desc": "Building a reliable, low-latency foundation for arcade network play.",
+    "card4.en": "Retro Communities Ark",
+    "card4.title": "Retro Communities Ark",
+    "card4.quote": "A PLAYGROUND passed down across generations, powered by user-hosted servers",
+    "sec.download.btn": "Go to GitHub Releases"
   }
 };
 
@@ -76,11 +70,7 @@ document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
 });
 
-// 2. 초기 시퀀스:
-// 1) 정중앙에 ARCADE NETWORK 한 줄 페이드 인
-// 2) DE, WORK 위로 빠지며 페이드 아웃 & 느리게 합쳐져 ARCANET 완성
-// 3) 정중앙에서 약 0.65s 대기
-// 4) 0.7배속(약 1.1s)으로 위로 올라간 뒤 A -> B -> R -> O 순차 등장
+// 2. 초기 시퀀스
 function runIntroSequence() {
   const arcanetCombine = document.getElementById("arcanet-combine");
   const abroRows = document.querySelectorAll(".abro-row[data-seq]");
@@ -89,24 +79,18 @@ function runIntroSequence() {
   arcanetCombine.classList.remove("visible", "drop-out", "merged", "lift-up");
   abroRows.forEach((row) => row.classList.remove("show"));
 
-  // 0.0s: 정중앙에 ARCADE NETWORK 페이드 인 시작
   setTimeout(() => {
     arcanetCombine.classList.add("visible", "lift-up");
   }, 50);
 
-  // 1.0s: DE와 WORK가 위로 빠지며 페이드 아웃 및 폭 축소 시작
   setTimeout(() => {
     arcanetCombine.classList.add("drop-out");
   }, 1000);
 
-  // 2.4s: ARCA와 NET이 1.0초에 걸쳐 천천히 합쳐지며 ARCANET 완성 (3.4s 완료)
   setTimeout(() => {
     arcanetCombine.classList.add("merged");
   }, 2400);
 
-  // 4.0s ~ 5.0s: CSS keyframes liftArcanetVertically가 정중앙 대기 후 수직 상승 실행 (5.0s 완료)
-
-  // 5.0s 이후: A -> B -> R -> O 순차 등장
   const startAbroDelay = 5050;
   const stepInterval = 320;
 
@@ -158,6 +142,18 @@ function handleScrollStage() {
     dot.classList.toggle("active", idx === activeIndex);
   });
 }
+
+// 우측 점 인디케이터 클릭 시 해당 스텝으로 스크롤 이동
+const stepProgressTargets = [0, 0.3, 0.5, 0.7, 0.9];
+dots.forEach((dot, idx) => {
+  dot.addEventListener("click", () => {
+    if (!heroStage) return;
+    const stageTop = heroStage.offsetTop;
+    const scrollableDistance = heroStage.offsetHeight - window.innerHeight;
+    const targetY = stageTop + scrollableDistance * (stepProgressTargets[idx] ?? 0);
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  });
+});
 
 if (document.readyState === "loading") {
   window.addEventListener("DOMContentLoaded", runIntroSequence);
