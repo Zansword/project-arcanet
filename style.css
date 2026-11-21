@@ -198,7 +198,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 390px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,14 +211,13 @@ body {
   justify-content: center;
   max-width: 100%;
   white-space: nowrap;
-  /* K 끝글자 잘림 방지를 위해 유동 크기 하한선 및 우측 여백 보정 */
   font-size: clamp(0.95rem, 3.8vw, 2.75rem);
   font-weight: 800;
   letter-spacing: 0.02em;
-  padding: 0 8px;
+  padding: 0 12px;
   color: #ffffff;
   opacity: 0;
-  transform: translateY(105px);
+  transform: translateY(96px);
   transition: letter-spacing 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -235,22 +234,22 @@ body {
 @keyframes fadeInCenter {
   from {
     opacity: 0;
-    transform: translateY(105px);
+    transform: translateY(96px);
   }
   to {
     opacity: 1;
-    transform: translateY(105px);
+    transform: translateY(96px);
   }
 }
 
 @keyframes liftArcanetVertically {
   from {
     opacity: 1;
-    transform: translateY(105px);
+    transform: translateY(96px);
   }
   to {
     opacity: 1;
-    transform: translateY(-22px);
+    transform: translateY(-18px);
   }
 }
 
@@ -259,10 +258,10 @@ body {
   align-items: baseline;
 }
 
-/* DE와 WORK가 사라짐과 동시에 공백도 함께 0으로 수축해 ARCA NET 중간 단계 제거 */
+/* [핵심 수정] WORK의 W, K 폭이 5ch보다 넓어 K가 잘리던 문제를 10ch로 해결 */
 .arcanet-combine .drop {
   display: inline-block;
-  max-width: 5ch;
+  max-width: 10ch;
   opacity: 1;
   transform: translateY(0);
   overflow: hidden;
@@ -292,7 +291,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* A / B / R / O 순차 등장 및 풀네임 확장 속도 감속 */
+/* A / B / R / O 순차 등장 및 풀네임 확장 */
 .abro-matrix {
   display: inline-flex;
   flex-direction: column;
@@ -340,10 +339,19 @@ body {
   max-width: 85vw;
 }
 
+/* [핵심 수정] 하단 마우스 휠 안내 문구가 밀려나거나 사라지지 않도록 하단 고정 배치 */
 .scroll-hint {
-  margin-top: 14px;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90vw;
   font-size: 13px;
   color: var(--text-secondary);
+  opacity: 0.9;
+  z-index: 4;
+  pointer-events: none;
 }
 
 /* 슬라이드 공통 스타일 */
