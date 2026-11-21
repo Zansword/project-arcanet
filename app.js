@@ -117,52 +117,70 @@ const dots = Array.from(document.querySelectorAll(".stage-progress .dot"));
 const bgMedia = document.getElementById("bg-media");
 const bgShowcaseImage = document.getElementById("bg-showcase-image");
 
+let currentActiveIndex = -1;
+let lastBgUrl = "";
+
 function updateBackgroundImage(layer) {
   if (!bgShowcaseImage || !layer) return;
   const imgUrl = (layer.getAttribute("data-bg-image") || "").trim();
 
   if (!imgUrl) {
+    lastBgUrl = "";
     bgShowcaseImage.classList.remove("has-image");
+    return;
+  }
+
+  if (imgUrl === lastBgUrl) {
+    bgShowcaseImage.classList.add("has-image");
     return;
   }
 
   const probe = new Image();
   probe.onload = () => {
+    lastBgUrl = imgUrl;
     bgShowcaseImage.style.backgroundImage = `url("${imgUrl}")`;
     bgShowcaseImage.classList.add("has-image");
   };
   probe.onerror = () => {
+    lastBgUrl = "";
     bgShowcaseImage.classList.remove("has-image");
   };
   probe.src = imgUrl;
 }
 
+function applyActiveSlide(nextIndex) {
+  if (nextIndex === currentActiveIndex) return;
+  currentActiveIndex = nextIndex;
+
+  layers.forEach((layer, idx) => {
+    layer.classList.toggle("active", idx === nextIndex);
+  });
+
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle("active", idx === nextIndex);
+  });
+
+  updateBackgroundImage(layers[nextIndex]);
+}
+
 function handleScrollStage() {
   if (!heroStage || !layers.length) return;
-  const rect = heroStage.getBoundingClientRect();
   const scrollableDistance = heroStage.offsetHeight - window.innerHeight;
   if (scrollableDistance <= 0) return;
 
-  const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
+  const scrolledInsideStage = window.scrollY - heroStage.offsetTop;
+  const progress = Math.min(Math.max(scrolledInsideStage / scrollableDistance, 0), 1);
 
   const scale = 1 + progress * 0.1;
   if (bgMedia) bgMedia.style.transform = `scale(${scale.toFixed(3)})`;
 
   const totalSlides = layers.length;
-  const activeIndex = Math.min(
-    Math.floor(progress * totalSlides),
-    totalSlides - 1
-  );
+  const activeIndex =
+    progress >= 0.999
+      ? totalSlides - 1
+      : Math.min(Math.floor(progress * totalSlides), totalSlides - 1);
 
-  layers.forEach((layer, idx) => {
-    layer.classList.toggle("active", idx === activeIndex);
-  });
-
-  dots.forEach((dot, idx) => {
-    dot.classList.toggle("active", idx === activeIndex);
-  });
-
-  updateBackgroundImage(layers[activeIndex]);
+  applyActiveSlide(activeIndex);
 }
 
 dots.forEach((dot, idx) => {
@@ -176,11 +194,6 @@ dots.forEach((dot, idx) => {
   });
 });
 
-if (document.readyState === "loading") {
-  window.addEventListener("DOMContentLoaded", runIntroSequence);
-} else {
-  runIntroSequence();
-}
-
 window.addEventListener("scroll", handleScrollStage, { passive: true });
+window.addEventListener("resize", handleScrollStage, { passive: true });
 handleScrollStage();
