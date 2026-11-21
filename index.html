@@ -15,16 +15,13 @@
           <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
+        <span class="brand-name">ARCANET</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#intro" data-i18n="nav.intro">소개문</a>
-        <a href="#overview" data-i18n="nav.overview">설명</a>
-        <a href="#components" data-i18n="nav.components">구성요소</a>
-        <a href="#download" data-i18n="nav.download">다운로드</a>
-        <a href="#process" data-i18n="nav.process">개발과정</a>
-        <a href="#developer" data-i18n="nav.developer">개발자</a>
-        <a href="#support" data-i18n="nav.support">후원</a>
+        <a href="#hero-stage" data-i18n="nav.architecture">아키텍처</a>
+        <a href="#goals" data-i18n="nav.goals">목표</a>
+        <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" data-i18n="nav.releases">릴리즈</a>
       </nav>
 
       <div class="lang-switcher">
@@ -84,7 +81,7 @@
         <div class="stage-layer" data-step="1">
           <span class="pillar-badge">01 / 04</span>
           <h2 class="pillar-title">Arcade</h2>
-          <p class="pillar-desc" data-i18n="pillar.arcade">사라져가는 아케이드 시대의 게임 문화</p>
+          <p class="pillar-desc" data-i18n="pillar.arcade">사라져가는 아케이드 시대의 게임 문화 보존과 계승</p>
         </div>
 
         <div class="stage-layer" data-step="2">
@@ -106,69 +103,65 @@
         </div>
 
         <!-- 우측 진행도 인디케이터 -->
-        <div class="stage-progress">
-          <span class="dot active" data-dot="0"></span>
-          <span class="dot" data-dot="1"></span>
-          <span class="dot" data-dot="2"></span>
-          <span class="dot" data-dot="3"></span>
-          <span class="dot" data-dot="4"></span>
+        <div class="stage-progress" aria-label="Stage progress">
+          <button type="button" class="dot active" data-dot="0" aria-label="Step 1"></button>
+          <button type="button" class="dot" data-dot="1" aria-label="Step 2"></button>
+          <button type="button" class="dot" data-dot="2" aria-label="Step 3"></button>
+          <button type="button" class="dot" data-dot="3" aria-label="Step 4"></button>
+          <button type="button" class="dot" data-dot="4" aria-label="Step 5"></button>
         </div>
       </div>
     </section>
 
-    <!-- 7개 메뉴 대응 섹션 도화지 -->
-    <section id="intro" class="content-section">
+    <!-- ARCANET의 목표 섹션 -->
+    <section id="goals" class="content-section">
       <div class="container">
-        <h2 data-i18n="sec.intro.title">소개문</h2>
-        <p class="placeholder-text" data-i18n="sec.intro.body">Project Arcanet의 시작과 환영 인사말이 들어갈 영역입니다.</p>
-      </div>
-    </section>
+        <span class="section-eyebrow" data-i18n="goals.eyebrow">Arcanet is Heading to...</span>
+        <h2 data-i18n="goals.title">ARCANET의 목표</h2>
 
-    <section id="overview" class="content-section alt-bg">
-      <div class="container">
-        <h2 data-i18n="sec.overview.title">설명</h2>
-        <p class="placeholder-text" data-i18n="sec.overview.body">에뮬레이터의 전체적인 목적과 핵심 설계 철학이 들어갈 영역입니다.</p>
-      </div>
-    </section>
+        <div class="goal-cards-grid">
+          <!-- 카드 1 -->
+          <article class="goal-card">
+            <span class="card-index">01</span>
+            <p class="card-en" data-i18n="card1.en">Up to 4 players netplay</p>
+            <h3 data-i18n="card1.title">3~4인 다중 멀티플레이</h3>
+            <p class="card-titles" data-i18n="card1.games">던전 앤 드래곤 / 닌자 베이스볼 배트맨</p>
+          </article>
 
-    <section id="components" class="content-section">
-      <div class="container">
-        <h2 data-i18n="sec.components.title">구성요소</h2>
-        <div class="bento-grid">
-          <div class="bento-card"><h3>Core Engine</h3><p>Deterministic Board Architecture</p></div>
-          <div class="bento-card"><h3>Rust Wrapper</h3><p>Safe Frontend &amp; Execution Layer</p></div>
-          <div class="bento-card"><h3>Rollback Sync</h3><p>Frame-accurate State Synchronization</p></div>
-          <div class="bento-card"><h3>Community Server</h3><p>User-hosted Network Infrastructure</p></div>
+          <!-- 카드 2 -->
+          <article class="goal-card">
+            <span class="card-index">02</span>
+            <p class="card-en" data-i18n="card2.en">Life to forgotten 3D Hardware</p>
+            <h3 data-i18n="card2.title">잊혀진 3D 아케이드 하드웨어</h3>
+            <p class="card-titles" data-i18n="card2.games">테크로맨서 / 동물철권 / 철권 2</p>
+          </article>
+
+          <!-- 카드 3 -->
+          <article class="goal-card">
+            <span class="card-index">03</span>
+            <p class="card-en" data-i18n="card3.en">Infrastructure of Arcade Netplay</p>
+            <h3 data-i18n="card3.title">아케이드 넷플레이 인프라</h3>
+            <p class="card-desc" data-i18n="card3.desc">
+              안정적이고 저지연의 아케이드 네트워크 플레이 기반을 구축합니다.
+            </p>
+          </article>
+
+          <!-- 카드 4 -->
+          <article class="goal-card featured-card">
+            <span class="card-index">04</span>
+            <p class="card-en" data-i18n="card4.en">Retro Communities Ark</p>
+            <h3 data-i18n="card4.title">레트로 커뮤니티의 방주</h3>
+            <p class="card-quote" data-i18n="card4.quote">
+              서버를 사용자들이 개설함으로써, 세대를 거쳐 계승되는 PLAYGROUND
+            </p>
+          </article>
         </div>
-      </div>
-    </section>
 
-    <section id="download" class="content-section alt-bg">
-      <div class="container">
-        <h2 data-i18n="sec.download.title">다운로드</h2>
-        <p class="placeholder-text" data-i18n="sec.download.body">최신 릴리즈 바이너리 및 실행 사양, 라이선스 안내가 들어갈 영역입니다.</p>
-        <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" class="cta-btn" data-i18n="sec.download.btn">GitHub Releases 바로가기</a>
-      </div>
-    </section>
-
-    <section id="process" class="content-section">
-      <div class="container">
-        <h2 data-i18n="sec.process.title">개발 과정</h2>
-        <p class="placeholder-text" data-i18n="sec.process.body">과거 포크 프로젝트 분석에서 독자적 아케이드 보드 재구축 및 사후 소스 공개 로드맵까지의 기록입니다.</p>
-      </div>
-    </section>
-
-    <section id="developer" class="content-section alt-bg">
-      <div class="container">
-        <h2 data-i18n="sec.developer.title">About Developer</h2>
-        <p class="placeholder-text" data-i18n="sec.developer.body">개발자 소개 및 엔지니어링 철학이 들어갈 영역입니다.</p>
-      </div>
-    </section>
-
-    <section id="support" class="content-section">
-      <div class="container">
-        <h2 data-i18n="sec.support.title">후원 (Coffee)</h2>
-        <p class="placeholder-text" data-i18n="sec.support.body">프로젝트의 지속적인 연구와 인프라 유지를 위한 자발적 후원 안내 영역입니다.</p>
+        <div class="section-cta-wrap">
+          <a href="https://github.com/Zansword/project-arcanet/releases" target="_blank" rel="noopener" class="cta-btn" data-i18n="sec.download.btn">
+            GitHub Releases 바로가기
+          </a>
+        </div>
       </div>
     </section>
   </main>
