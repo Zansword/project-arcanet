@@ -257,7 +257,7 @@ body {
   align-items: baseline;
 }
 
-/* DE와 WORK가 동일한 속도로 사라지며 폭 축소 */
+/* DE와 WORK가 올라가며 사라진 뒤 폭이 빠르게 접히도록 조정 */
 .arcanet-combine .drop {
   display: inline-block;
   max-width: 5ch;
@@ -265,22 +265,22 @@ body {
   transform: translateY(0);
   overflow: hidden;
   transition:
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.85s ease,
-    max-width 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s ease,
+    max-width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
 }
 
 .arcanet-combine.drop-out .drop {
-  transform: translateY(-28px);
+  transform: translateY(-24px);
   opacity: 0;
   max-width: 0;
 }
 
-/* ARCADE와 NETWORK 사이 공백이 단일 이징으로 함께 닫힘 */
+/* 공백이 끊김 없이 닫히며 ARCANET으로 합체 */
 .word-gap {
   display: inline-block;
   width: 0.55em;
-  transition: width 1.0s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .arcanet-combine.merged .word-gap {
