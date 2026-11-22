@@ -284,3 +284,73 @@ if (document.readyState === "loading") {
 window.addEventListener("scroll", handleScrollStage, { passive: true });
 window.addEventListener("resize", handleScrollStage, { passive: true });
 handleScrollStage();
+
+// 4. 개발 과정(process.html) 마우스 휠 연동 가로 타임라인 제어
+const processStage = document.getElementById("process-stage");
+const hSlidesTrack = document.getElementById("h-slides-track");
+const hSlides = Array.from(document.querySelectorAll(".h-slide"));
+const hNodes = Array.from(document.querySelectorAll(".h-node"));
+const hTimelineFill = document.getElementById("h-timeline-fill");
+
+let activeProcessStep = -1;
+
+function applyProcessStep(nextStep) {
+  if (!hSlides.length || nextStep === activeProcessStep) return;
+  activeProcessStep = nextStep;
+
+  if (hSlidesTrack) {
+    hSlidesTrack.style.transform = `translateX(-${nextStep * 100}%)`;
+  }
+
+  hSlides.forEach((slide, idx) => {
+    slide.classList.toggle("active", idx === nextStep);
+  });
+
+  hNodes.forEach((node, idx) => {
+    node.classList.toggle("active", idx === nextStep);
+    node.classList.toggle("passed", idx < nextStep);
+  });
+
+  if (hTimelineFill && hNodes.length > 1) {
+    const pct = (nextStep / (hNodes.length - 1)) * 100;
+    hTimelineFill.style.width = `${pct}%`;
+  }
+}
+
+function handleProcessScroll() {
+  if (!processStage || !hSlides.length) return;
+  const scrollable = processStage.offsetHeight - window.innerHeight;
+  if (scrollable <= 0) return;
+
+  const scrolled = window.scrollY - processStage.offsetTop;
+  const progress = Math.min(Math.max(scrolled / scrollable, 0), 1);
+  const total = hSlides.length;
+  const step =
+    progress >= 0.999 ? total - 1 : Math.min(Math.floor(progress * total), total - 1);
+
+  applyProcessStep(step);
+}
+
+function scrollToProcessStep(stepIndex) {
+  if (!processStage || !hSlides.length) return;
+  const scrollable = processStage.offsetHeight - window.innerHeight;
+  const targetY = processStage.offsetTop + scrollable * ((stepIndex + 0.15) / hSlides.length);
+  window.scrollTo({ top: targetY, behavior: "smooth" });
+}
+
+hNodes.forEach((node, idx) => {
+  node.addEventListener("click", () => scrollToProcessStep(idx));
+});
+
+window.addEventListener("keydown", (e) => {
+  if (!processStage || !hSlides.length) return;
+  if (e.key === "ArrowRight" && activeProcessStep < hSlides.length - 1) {
+    scrollToProcessStep(activeProcessStep + 1);
+  } else if (e.key === "ArrowLeft" && activeProcessStep > 0) {
+    scrollToProcessStep(activeProcessStep - 1);
+  }
+});
+
+window.addEventListener("scroll", handleProcessScroll, { passive: true });
+window.addEventListener("resize", handleProcessScroll, { passive: true });
+handleProcessScroll();
