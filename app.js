@@ -4,6 +4,7 @@ const i18nData = {
     "nav.intro": "소개문",
     "nav.overview": "설명",
     "nav.components": "구성요소",
+    "nav.news": "소식",
     "nav.download": "다운로드",
     "nav.process": "개발 과정",
     "nav.developer": "About Developer",
@@ -26,7 +27,7 @@ const i18nData = {
     "release.title": "릴리즈 및 저장소",
     "release.desc": "최신 바이너리 릴리즈와 각 섹션별 상세 페이지는 상단 메뉴 또는 GitHub Releases에서 확인할 수 있습니다.",
     "sec.download.btn": "GitHub Releases 바로가기",
-    "back.home": "메인 프레젠테이션으로 돌아가기",
+    "back.home": "돌아가기",
 
     // 소개문 (pages/intro.html)
     "page.intro.eyebrow": "INTRO & ARCHIVE",
@@ -41,7 +42,12 @@ const i18nData = {
     // 구성요소 (pages/components.html)
     "page.components.eyebrow": "COMPONENTS & FILES",
     "page.components.title": "구성요소",
-    "page.components.lead": "실행 파일과 코어 모듈, 설정 및 네트워크 구성 요소의 역할을 정리했습니다.",
+    "page.components.lead": "실행 파일과 코어 모듈, 커뮤니티 매치메이킹 서버의 역할을 정리했습니다.",
+
+    // 소식 (pages/news.html)
+    "page.news.eyebrow": "DEV NOTES & ANNOUNCEMENTS",
+    "page.news.title": "소식",
+    "page.news.lead": "개발자 노트와 주요 공지사항을 전하는 공간입니다.",
 
     // 다운로드 (pages/download.html)
     "page.download.eyebrow": "RELEASES & DOWNLOAD",
@@ -67,14 +73,15 @@ const i18nData = {
     "nav.intro": "Intro",
     "nav.overview": "Overview",
     "nav.components": "Components",
+    "nav.news": "News",
     "nav.download": "Download",
     "nav.process": "Dev Process",
     "nav.developer": "About Developer",
     "nav.support": "Support",
     "hero.hint": "Scroll down to step through the presentation",
-    "pillar.arcade": "Preserve and pass on gaming culture to the next generation",
-    "pillar.board": "Optimized architecture built for 3D arcade emulation",
-    "pillar.rollback": "Rollback netcode powered by a deterministic architecture",
+    "pillar.arcade": "Preserve and pass on arcade gaming culture to the next generation",
+    "pillar.board": "Architecture tailored for 3D arcade emulation",
+    "pillar.rollback": "Rollback netcode powered by a deterministic state design",
     "pillar.community": "Independent community infrastructure where users host their own servers",
     "goals.eyebrow": "Arcanet is Heading to...",
     "goals.title": "ARCANET Goals",
@@ -87,9 +94,9 @@ const i18nData = {
     "card3.desc": "An arcade community ARK passed down across generations through user-hosted servers",
     "release.eyebrow": "PROJECT ARCANET",
     "release.title": "Releases & Repository",
-    "release.desc": "Latest binary releases and section pages are available via the top navigation or GitHub Releases.",
+    "release.desc": "Latest binary releases and section pages are accessible from the top navigation bar or GitHub Releases.",
     "sec.download.btn": "Go to GitHub Releases",
-    "back.home": "Back to Presentation",
+    "back.home": "Back",
 
     "page.intro.eyebrow": "INTRO & ARCHIVE",
     "page.intro.title": "Introduction",
@@ -97,19 +104,23 @@ const i18nData = {
 
     "page.overview.eyebrow": "ARCHITECTURE & GUIDE",
     "page.overview.title": "Overview & Setup",
-    "page.overview.lead": "Two-tier system architecture, ROM policy, and setup instructions for ARCANET.",
+    "page.overview.lead": "Two-tier system architecture, ROM policy, and setup notes for ARCANET.",
 
     "page.components.eyebrow": "COMPONENTS & FILES",
     "page.components.title": "Components",
-    "page.components.lead": "Overview of binaries, core modules, and network/configuration components.",
+    "page.components.lead": "Overview of the frontend executable, hardware core libraries, and community matchmaking server.",
+
+    "page.news.eyebrow": "DEV NOTES & ANNOUNCEMENTS",
+    "page.news.title": "News & Dev Notes",
+    "page.news.lead": "Developer notes, architecture updates, and announcements for Project Arcanet.",
 
     "page.download.eyebrow": "RELEASES & DOWNLOAD",
     "page.download.title": "Download",
-    "page.download.lead": "Latest binary releases, supported hardware logs, and legal ROM extraction references.",
+    "page.download.lead": "Latest binary builds, supported hardware logs, and legal ROM extraction references.",
 
     "page.process.eyebrow": "ORIGIN & TIMELINE",
     "page.process.title": "Development Process",
-    "page.process.lead": "A decade-long timeline of experiments, reverse engineering, and architectural decisions leading to ARCANET.",
+    "page.process.lead": "A decade-long timeline of experiments, reverse engineering, and architectural shifts leading to ARCANET.",
 
     "page.developer.eyebrow": "ABOUT DEVELOPER",
     "page.developer.title": "About Developer",

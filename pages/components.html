@@ -21,6 +21,7 @@
         <a href="intro.html" data-i18n="nav.intro">소개문</a>
         <a href="overview.html" data-i18n="nav.overview">설명</a>
         <a href="components.html" class="active" data-i18n="nav.components">구성요소</a>
+        <a href="news.html" data-i18n="nav.news">소식</a>
         <a href="download.html" data-i18n="nav.download">다운로드</a>
         <a href="process.html" data-i18n="nav.process">개발 과정</a>
         <a href="developer.html" data-i18n="nav.developer">About Developer</a>
@@ -46,26 +47,24 @@
         <div data-lang-block="ko">
           <h2 class="section-heading">주요 구성요소</h2>
           <ul class="component-list">
-            <li><strong>프론트엔드 실행 바이너리 (abro.exe)</strong>사용자 인터페이스, 그래픽 렌더링, 사운드 출력 및 P2P/서버 네트워크 세션을 전담하는 Rust 기반 실행 계층입니다.</li>
+            <li><strong>프론트엔드(.exe)</strong>사용자 인터페이스, 그래픽 렌더링, 사운드 출력 및 P2P/서버 네트워크 세션을 전담하는 Rust 기반 실행 계층입니다.</li>
             <li><strong>아케이드 하드웨어 코어 라이브러리 (.dll)</strong>Neo Geo, Namco System 12 등 대상 기판의 CPU·메모리·주변 칩을 결정론적 구조로 에뮬레이션하는 C89 코어 모듈입니다.</li>
-            <li><strong>상태 스냅샷 및 Rollback 엔진</strong>프레임 단위 상태 저장·복원과 원격 입력 동기화를 처리하여 지연 없는 대전 및 3~4인 멀티플레이를 지원합니다.</li>
-            <li><strong>독자 커뮤니티 서버 및 설정 파일</strong>유저가 직접 호스트 서버를 개설하고 관전·중도 참여 세션을 운영할 수 있는 네트워크 구성 요소입니다.</li>
+            <li><strong>매치메이킹 서버 및 설정 파일 (.exe)</strong>유저가 직접 호스트 서버를 개설하고 관전·중도 참여 세션을 운영할 수 있는 커뮤니티용 add-on 서버입니다.(최대 200명)</li>
           </ul>
         </div>
         <div data-lang-block="en" style="display:none;">
           <h2 class="section-heading">Core Components</h2>
           <ul class="component-list">
-            <li><strong>Frontend Executable (abro.exe)</strong>Rust-based frontend layer responsible for UI, graphics rendering, audio output, and network session control.</li>
+            <li><strong>Frontend Executable (.exe)</strong>Rust-based frontend layer responsible for UI, graphics rendering, audio output, and network session control.</li>
             <li><strong>Arcade Hardware Core Libraries (.dll)</strong>Deterministic C89 core modules emulating CPUs, memory maps, and custom hardware for boards like Neo Geo and Namco System 12.</li>
-            <li><strong>State Snapshot &amp; Rollback Engine</strong>Handles frame-level state serialization and remote input synchronization for responsive 2–4 player netplay.</li>
-            <li><strong>Community Server &amp; Configuration</strong>Components enabling user-hosted lobbies, spectating, and drop-in multiplayer sessions.</li>
+            <li><strong>MatchMaking Server &amp; Configuration(.exe)</strong>Components enabling user-hosted lobbies, spectating, and drop-in multiplayer sessions.(Maximum 200)</li>
           </ul>
         </div>
       </section>
 
 
       <div class="subpage-actions">
-        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">돌아가기</a>
       </div>
     </div>
   </main>
