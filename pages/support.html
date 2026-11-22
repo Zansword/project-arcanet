@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>후원 — Project Arcanet</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand-logo" aria-label="Project Arcanet Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="brand-name">ARCANET</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="intro.html" data-i18n="nav.intro">소개문</a>
+        <a href="overview.html" data-i18n="nav.overview">설명</a>
+        <a href="components.html" data-i18n="nav.components">구성요소</a>
+        <a href="download.html" data-i18n="nav.download">다운로드</a>
+        <a href="process.html" data-i18n="nav.process">개발 과정</a>
+        <a href="developer.html" data-i18n="nav.developer">About Developer</a>
+        <a href="support.html" class="active" data-i18n="nav.support">후원</a>
+      </nav>
+
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="ko">KO</button>
+        <span class="divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <div class="container">
+      <span class="section-eyebrow" data-i18n="page.support.eyebrow"></span>
+      <h1 data-i18n="page.support.title"></h1>
+      <p class="subpage-lead" data-i18n="page.support.lead"></p>
+
+      
+      <section class="subpage-card">
+        <div data-lang-block="ko">
+          <h2 class="section-heading">Buy Me a Coffee</h2>
+          <p class="release-desc">후원은 강제성이 없는 자발적 응원이며, 지속적인 아키텍처 연구와 테스트 인프라를 이어가는 데 큰 힘이 됩니다.</p>
+          <a href="https://www.buymeacoffee.com/" target="_blank" rel="noopener" class="cta-btn">
+            Buy Me a Coffee로 후원하기
+          </a>
+        </div>
+        <div data-lang-block="en" style="display:none;">
+          <h2 class="section-heading">Buy Me a Coffee</h2>
+          <p class="release-desc">Support is completely voluntary and helps sustain ongoing architecture research and testing setups.</p>
+          <a href="https://www.buymeacoffee.com/" target="_blank" rel="noopener" class="cta-btn">
+            Support via Buy Me a Coffee
+          </a>
+        </div>
+      </section>
+
+
+      <div class="subpage-actions">
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Project Arcanet. All rights reserved.</p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

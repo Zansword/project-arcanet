@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Developer — Project Arcanet</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand-logo" aria-label="Project Arcanet Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="brand-name">ARCANET</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="intro.html" data-i18n="nav.intro">소개문</a>
+        <a href="overview.html" data-i18n="nav.overview">설명</a>
+        <a href="components.html" data-i18n="nav.components">구성요소</a>
+        <a href="download.html" data-i18n="nav.download">다운로드</a>
+        <a href="process.html" data-i18n="nav.process">개발 과정</a>
+        <a href="developer.html" class="active" data-i18n="nav.developer">About Developer</a>
+        <a href="support.html" data-i18n="nav.support">후원</a>
+      </nav>
+
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="ko">KO</button>
+        <span class="divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <div class="container">
+      <span class="section-eyebrow" data-i18n="page.developer.eyebrow"></span>
+      <h1 data-i18n="page.developer.title"></h1>
+      <p class="subpage-lead" data-i18n="page.developer.lead"></p>
+
+      
+      <section class="subpage-card">
+        <div class="dev-header">
+          <span class="dev-aka">DEVELOPER</span>
+          <h2 class="dev-name">chamcham425 <span style="font-weight:500; color:var(--text-secondary);">AKA Zansword</span></h2>
+          <p class="release-desc" data-lang-block="ko">생각나는 아이디어가 있다면 실제로 테스트해보는 걸 좋아하는 사람입니다.</p>
+          <p class="release-desc" data-lang-block="en" style="display:none;">Someone who enjoys putting ideas to the test in real code and hardware.</p>
+        </div>
+
+        <div class="social-grid">
+          <a href="mailto:" class="social-item">
+            <span class="social-label">E-mail</span>
+            <span class="social-value">이메일 주소 입력 예정</span>
+          </a>
+          <a href="https://github.com/Zansword" target="_blank" rel="noopener" class="social-item">
+            <span class="social-label">GitHub</span>
+            <span class="social-value">github.com/Zansword</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="social-item">
+            <span class="social-label">YouTube</span>
+            <span class="social-value">채널 링크 입력 예정</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="social-item">
+            <span class="social-label">X (Twitter)</span>
+            <span class="social-value">계정 링크 입력 예정</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="social-item">
+            <span class="social-label">Blogger</span>
+            <span class="social-value">블로그 링크 입력 예정</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="subpage-card">
+        <h2 class="section-heading">Projects</h2>
+        <ul class="component-list">
+          <li>
+            <strong><a href="https://github.com/Zansword/fightcade-fbneo-overclock" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">fightcade-fbneo-overclock</a></strong>
+            Fightcade 2 FBNeo 환경에 오버클럭 옵션을 이식한 커스텀 빌드
+          </li>
+          <li>
+            <strong>Fightcade 2 P2P Direct Launcher</strong>
+            로비 서버에 의존하지 않고 P2P 직접 연결을 지원하는 런처
+          </li>
+        </ul>
+      </section>
+
+
+      <div class="subpage-actions">
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Project Arcanet. All rights reserved.</p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

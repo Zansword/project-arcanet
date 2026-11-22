@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>설명 — Project Arcanet</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand-logo" aria-label="Project Arcanet Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="brand-name">ARCANET</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="intro.html" data-i18n="nav.intro">소개문</a>
+        <a href="overview.html" class="active" data-i18n="nav.overview">설명</a>
+        <a href="components.html" data-i18n="nav.components">구성요소</a>
+        <a href="download.html" data-i18n="nav.download">다운로드</a>
+        <a href="process.html" data-i18n="nav.process">개발 과정</a>
+        <a href="developer.html" data-i18n="nav.developer">About Developer</a>
+        <a href="support.html" data-i18n="nav.support">후원</a>
+      </nav>
+
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="ko">KO</button>
+        <span class="divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <div class="container">
+      <span class="section-eyebrow" data-i18n="page.overview.eyebrow"></span>
+      <h1 data-i18n="page.overview.title"></h1>
+      <p class="subpage-lead" data-i18n="page.overview.lead"></p>
+
+      
+      <section class="subpage-card">
+        <div data-lang-block="ko">
+          <h2 class="section-heading">구조 설명 (2단계 계층 아키텍처)</h2>
+          <p class="release-desc">ARCANET 프로젝트의 아키텍처는 상태 결정성과 렌더링·네트워크 처리를 명확히 분리하기 위해 총 <strong>2단계 계층</strong>으로 구성됩니다.</p>
+
+          <div class="arch-grid">
+            <div class="arch-tier">
+              <span class="arch-tier-badge">TIER 01 · CORE</span>
+              <h3>1단계 — 아케이드 하드웨어 코어 라이브러리</h3>
+              <p>Neo Geo, Namco System 12 등 실제 아케이드 보드의 CPU, 레지스터, 주요 칩의 에뮬레이션과 <strong>결정론적 상태(Deterministic State)</strong>를 보장하기 위한 메모리 구조를 담고 있는 코어 계층입니다.</p>
+              <p>입력을 반영해 상태를 갱신·저장하면서 렌더링을 위한 결과 데이터를 프론트엔드로 전송합니다. 과거의 에뮬레이터들과 달리 실제 CPU 스레드는 게임 데이터 교환과 시뮬레이션에 집중하고, 병목을 유발할 수 있는 그래픽 렌더링은 별도 자원이 담당하도록 분리해 단일 CPU 코어의 부담이 비교적 적은 구조를 구현하고자 했습니다.</p>
+            </div>
+
+            <div class="arch-tier">
+              <span class="arch-tier-badge">TIER 02 · FRONTEND</span>
+              <h3>2단계 — 에뮬레이터 프론트엔드</h3>
+              <p>코어 옵션 설정, 그래픽 렌더링, 사운드 출력, 네트워크 세션 관리 및 동기화를 전담하는 계층입니다.</p>
+              <p>코어에서 출력되는 결과물만을 빠르게 연동하여 화면과 오디오로 표현하며, 프론트엔드가 코어 내부에 직접 영향을 주는 요소는 <strong>사전 코어 설정과 플레이어의 컨트롤 입력</strong>이 전부인 구조로 작동합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-lang-block="en" style="display:none;">
+          <h2 class="section-heading">Architecture (Two-Tier Design)</h2>
+          <p class="release-desc">ARCANET separates deterministic hardware simulation from presentation and networking across <strong>two distinct tiers</strong>.</p>
+
+          <div class="arch-grid">
+            <div class="arch-tier">
+              <span class="arch-tier-badge">TIER 01 · CORE</span>
+              <h3>Tier 1 — Arcade Hardware Core Library</h3>
+              <p>Emulates real arcade board CPUs, registers, and custom chips (such as Neo Geo and Namco System 12) with a memory layout built to guarantee <strong>deterministic state</strong> snapshots and restores.</p>
+              <p>Updates state from inputs and passes frame output to the frontend while keeping heavy rendering off the core simulation thread to reduce single-core CPU bottlenecks.</p>
+            </div>
+
+            <div class="arch-tier">
+              <span class="arch-tier-badge">TIER 02 · FRONTEND</span>
+              <h3>Tier 2 — Emulator Frontend</h3>
+              <p>Handles core configuration, graphics rendering, audio output, and network session management.</p>
+              <p>Consumes core outputs directly while restricting its influence on the core strictly to <strong>initial core settings and player control inputs</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subpage-card">
+        <div data-lang-block="ko">
+          <h2 class="section-heading">설치 및 사용법</h2>
+          <ul class="component-list">
+            <li>
+              <strong>ROM 정책 안내</strong>
+              프로젝트 ARCANET은 합법적인 경로로 확보한 ROM을 최우선 목표로 지원합니다. MAME를 기본 베이스로 참고하였으나 직접 ROM 파일을 제공하지 않으며, 공식 구매 소프트웨어에서 ROM을 추출해 활용할 수 있는 안내와 도구는 <a href="download.html" style="color:var(--accent);">다운로드</a> 페이지에서 함께 제공할 예정입니다.
+            </li>
+            <li>
+              <strong>설치 및 상세 설정 가이드</strong>
+              이미지를 곁들인 단계별 설치 및 네트워크 설정 가이드는 현재 일부 아키텍처 조정 작업이 마무리되는 대로 순차적으로 업데이트될 예정입니다.
+            </li>
+          </ul>
+        </div>
+
+        <div data-lang-block="en" style="display:none;">
+          <h2 class="section-heading">Setup &amp; Usage</h2>
+          <ul class="component-list">
+            <li>
+              <strong>ROM Policy</strong>
+              Project ARCANET prioritizes legally obtained ROMs. No ROM files are distributed directly; official purchase links and extraction utilities will be listed on the <a href="download.html" style="color:var(--accent);">Download</a> page.
+            </li>
+            <li>
+              <strong>Installation &amp; Configuration Guide</strong>
+              Illustrated step-by-step installation and netplay setup guides are currently on hold while final architectural refinements are completed.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <div class="subpage-actions">
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Project Arcanet. All rights reserved.</p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
