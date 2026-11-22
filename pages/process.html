@@ -43,7 +43,7 @@
           <span class="section-eyebrow" data-i18n="page.process.eyebrow">ORIGIN &amp; TIMELINE</span>
           <h1 data-i18n="page.process.title">개발 과정</h1>
         </div>
-        <p class="process-hint" data-i18n="hero.hint">마우스 휠을 내려 프레젠테이션을 넘기세요</p>
+        <p class="process-hint" data-i18n="hero.hint">마우스 휠을 내려 넘기세요</p>
       </div>
 
       <!-- 상단 가로 타임라인 노드 바 -->
@@ -110,13 +110,13 @@
               <span class="timeline-date">01 / 10 · 2015.05.31</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">메탈슬러그 넷플레이용 오버클럭 에뮬레이터 탐색</h2>
-                <p class="h-slide-point">파생 MAME 빌드 9종을 직접 비교 정리하며 10년 여정의 첫 단추를 끼우다</p>
-                <p class="h-slide-desc">오버클럭(주파수 조절) 옵션을 지원하는 네오지오 에뮬레이터를 찾기 위해 비교표를 작성하고 적합한 빌드를 찾아냈습니다. 하지만 이것이 10년 넘게 이어질 시행착오의 시작일 줄은 몰랐습니다.</p>
+                <p class="h-slide-point">파생 MAME 빌드를 직접 비교 정리하며 10년 여정의 첫 단추를 끼우다</p>
+                <p class="h-slide-desc">오버클럭(주파수 조절) 옵션을 지원하는 네오지오 에뮬레이터를 찾기 위해 비교표를 작성하면서 연구를 시작했습니다. 하지만 이것이 10년 넘게 이어질 여정의 시작일 줄은 몰랐습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Benchmarking Overclock-Capable Neo Geo Emulators</h2>
                 <p class="h-slide-point">Comparing nine MAME derivatives—the first step of a decade-long journey</p>
-                <p class="h-slide-desc">Created a comparison matrix to find the best Neo Geo build supporting overclocking for Metal Slug netplay, unaware that this was only the beginning.</p>
+                <p class="h-slide-desc">I began my research by creating a comparison table to find a 'neogeo' emulator that supports overclocking (frequency adjustment) options. </p> But I had no idea this would be the beginning of a journey that would last more than ten years.</p>
               </div>
               <div class="timeline-links">
                 <a href="https://youtube.com/watch?v=_hCOmMY2f-4" target="_blank" rel="noopener" class="timeline-link">YouTube 테스트 영상 보기</a>
@@ -137,13 +137,13 @@
               <span class="timeline-date">02 / 10 · 2019.03</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">첫 커스텀 MAME 빌드와 EKMame 학습</h2>
-                <p class="h-slide-point">EKMame을 교과서 삼아 롬핵용 ASM 코어와 Kaillera를 직접 통합하다</p>
-                <p class="h-slide-desc">기존 Kaillera와 MAME 환경이 기준에 미치지 못한다는 결론에 이르렀고, EKMame을 분석하며 롬핵(ROM Hack)용 ASM 코어 에뮬레이션과 Kaillera를 지원하는 첫 커스텀 빌드를 완성했습니다.</p>
+                <p class="h-slide-point">EKMame을 교과서 삼아 MAME를 공부하다</p>
+                <p class="h-slide-desc">기존 Kaillera와 MAME 환경이 기준에 미치지 못한다는 결론에 이르렀고, EKMame을 분석하며 메탈슬러그 시리즈 롬핵(ROM Hack)을 사용할 수 있는 Kaillera환경을 구축하려던 커스텀 빌드였으나,</p> ASM 코어 에뮬레이션의 카일레라 미지원, 또한 불안정한 Kaillera 환경과 부족한 부가기능의 한계를 확인합니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">First Custom MAME Build &amp; EKMame Study</h2>
-                <p class="h-slide-point">Using EKMame as a textbook to integrate ASM cores and Kaillera</p>
-                <p class="h-slide-desc">Built my first custom MAME with ASM core emulation for ROM hacks and Kaillera netplay support.</p>
+                <p class="h-slide-point">Studying MAME using EKMame as a textbook</p>
+                <p class="h-slide-desc">I concluded that the existing Kaillera and MAME environments did not meet the requirements,</p> and although this was a custom build intended to create a Kaillera environment capable of using Metal Slug series ROM hacks by analyzing EKMame, </p>I found that ASM core emulation does not support Kaillera, and that the environment is unstable with limited additional features.</p>
               </div>
             </div>
           </section>
@@ -161,13 +161,13 @@
               <span class="timeline-date">03 / 10 · 2019.10</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">Final Burn Alpha(FBA) 포팅 시도</h2>
-                <p class="h-slide-point">롬핵 리셋 문제를 해결하기 위해 가벼운 FBA 아키텍처로 시선을 돌리다</p>
-                <p class="h-slide-desc">커스텀 MAME 테스트 중 일부 롬핵에서 리셋 문제가 발생하는 것을 확인하고 Final Burn Alpha로 방향을 전환했습니다. MAME 분석 경험을 바탕으로 구버전 FBA에 직접 코드를 이식했습니다.</p>
+                <p class="h-slide-point">롬핵 리셋 문제를 해결하기 위해 FBA를 선택, 그러나....</p>
+                <p class="h-slide-desc">커스텀 MAME 테스트 중 일부 롬핵에서 리셋 문제가 발생하는 것을 확인하고, Final Burn Alpha로 방향을 전환했습니다. </p>MAME 분석 경험을 바탕으로 구버전 FBA에 직접 코드를 이식, 그러나 Kailera와 전혀 맞지 않는 환경으로 오프라인에서만 사용가능하다는 한계가 있었습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Porting Drivers to Final Burn Alpha (FBA)</h2>
-                <p class="h-slide-point">Pivoting to FBA's lightweight architecture to resolve ROM hack resets</p>
-                <p class="h-slide-desc">Leveraged insights from MAME internals to port custom driver logic directly into an older FBA codebase.</p>
+                <p class="h-slide-point">Pivoting to FBA's lightweight architecture to resolve ROM hack resets, However....</p>
+                <p class="h-slide-desc">After confirming that some custom MAME tests were experiencing reset issues with certain ROM kernels, </p> I have shifted our focus to Final Burn Alpha. Based on my experience with MAME analysis, </p> I ported the code to an older version of FBA, but it had the limitation of being usable only offline and not compatible at all with Kailera.</p>
               </div>
             </div>
           </section>
@@ -185,13 +185,13 @@
               <span class="timeline-date">04 / 10 · 2020.01.15</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">Kaillera의 한계와 GGPOFBA 소스 탐색</h2>
-                <p class="h-slide-point">Rollback 넷코드의 위력을 체감했으나 레거시 툴체인의 벽을 마주하다</p>
-                <p class="h-slide-desc">안정적인 넷플레이를 위해 구버전 GGPOFBA 소스코드를 확보해 VC 2003+ 툴킷으로 빌드에 성공했습니다. 결과물은 뛰어났지만 오래된 빌드 환경 탓에 유지보수 한계가 명확했습니다.</p>
+                <p class="h-slide-point">GGPO와의 첫만남, GGPOFBA</p>
+                <p class="h-slide-desc">구버전 GGPOFBA 소스코드를 확보해 VC 2003+ 툴킷으로 빌드에 성공했습니다. 결과물은 예상이상이었지만, 미지원하는 드라이버 및 유실된 ROMSET의 한계가 있었습니다만, </p> 이는 훗날 Fightcade의 에뮬레이터 소스의 컴파일 환경을 구축하게 되는 밑거름이 되었습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Kaillera's Limits &amp; Building Legacy GGPOFBA</h2>
-                <p class="h-slide-point">Experiencing rollback netplay firsthand—alongside legacy toolchain debt</p>
-                <p class="h-slide-desc">Compiled archival GGPOFBA source with the VC 2003+ toolkit; netplay felt great, though maintenance proved unsustainable.</p>
+                <p class="h-slide-point">First Meeting with GGPO, GGPOFBA</p>
+                <p class="h-slide-desc">I secured the old version of the GGPOFBA source code and successfully built it using the VC 2003+ toolkit.</p> The result exceeded expectations, but there were limitations with unsupported drivers and a missing ROMSET; however, </p>this laid the groundwork for building a compilation environment for Fightcade's emulator source code in the future</p>
               </div>
               <div class="timeline-links">
                 <a href="https://youtu.be/q7djvgEUpkk" target="_blank" rel="noopener" class="timeline-link">YouTube 구동 영상 보기</a>
@@ -213,12 +213,12 @@
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">Fightcade 2 FBNeo 오버클럭 이식과 PR 경험</h2>
                 <p class="h-slide-point">오버클럭 이식 성공 후 업스트림 거절을 겪으며 독자 인프라의 필요성을 깨닫다</p>
-                <p class="h-slide-desc">공개된 FC2 FBNeo 소스에 오버클럭 옵션을 이식해 개발팀에 제안했으나, 상속 리스크 등의 이유로 메탈슬러그 롬핵 드라이버만 반영되고 오버클럭 기능은 거절되었습니다.</p>
+                <p class="h-slide-desc">공개된 FC2 FBNeo 소스에 오버클럭 옵션을 이식해 개발팀에 제안했으나, 이는 기존의 인프라 아키텍처(리플레이 및 매치메이킹 로비)와의 충돌 등의 이유로 메탈슬러그 롬핵 드라이버만 반영되고 오버클럭 기능은 거절되었으며, 이는 REDGGPO역시 동일하였습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Fightcade 2 FBNeo Overclock Port &amp; Upstream PR</h2>
                 <p class="h-slide-point">Realizing the need for independent infrastructure after upstream rejection</p>
-                <p class="h-slide-desc">Ported overclocking to FC2 FBNeo; only Metal Slug hack drivers were merged while overclocking was declined due to inherited risks.</p>
+                <p class="h-slide-desc">proposed to the development team to port the overclocking option to the released FC2 FBNeo source, </p>but due to conflicts with the existing infrastructure architecture (replay and matchmaking lobbies), only the Metal Slug Hack Rom driver was implemented, </p>and the overclocking feature was rejected. This REDGGPO Also too.</p>
               </div>
               <div class="timeline-links">
                 <a href="https://github.com/Zansword/fightcade-fbneo-overclock" target="_blank" rel="noopener" class="timeline-link">GitHub 저장소 보기</a>
@@ -263,7 +263,7 @@
               <span class="timeline-date">07 / 10 · 2022.03.16</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">MAME Plus! Plus! 0.132u1 헥스 에디터 수정</h2>
-                <p class="h-slide-point">철권 태그 토너먼트(Namco System 12) 커뮤니티를 위해 바이너리를 직접 패치하다</p>
+                <p class="h-slide-point">철권 태그 토너먼트(Namco System 12) 커뮤니티를 위해 바이너리를 직접 패치</p>
                 <p class="h-slide-desc">오토 프레임스킵과 불완전한 사운드 클럭 문제를 겪던 레거시 바이너리를 헥스 에디터로 직접 수정해 배포했으며, 이후 커뮤니티에서 SRkade Mame이라는 이름으로 공유되기도 했습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
@@ -290,13 +290,13 @@
               <span class="timeline-date">08 / 10 · 2022.05 ~ 2024.05</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">Fightcade 2 P2P Direct Launcher 확장</h2>
-                <p class="h-slide-point">중앙 로비 서버가 사라져도 영구히 작동하는 P2P 직결 연결 구조를 검증하다</p>
-                <p class="h-slide-desc">로비 서버 종료 이후에도 Fightcade 2 에뮬레이터의 가치를 유지할 수 있도록, Supercade와 FC1에서 비롯된 직접 연결 아이디어를 FC2 환경에 맞게 확장했습니다.</p>
+                <p class="h-slide-point">중앙 로비 서버가 사라져도 영구히 작동하는 P2P 다이렉트 연결 아키텍처</p>
+                <p class="h-slide-desc">로비 서버 종료 이후에도 Fightcade 2 에뮬레이터의 가치를 유지할 수 있도록, 기존의 누군가가 개발했던 Supercade와 FC1의 다이렉트 연결 아이디어를 확장하여 FC2 환경에 맞게 확장했습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Fightcade 2 P2P Direct Launcher</h2>
-                <p class="h-slide-point">Validating serverless P2P connections built to outlive central lobbies</p>
-                <p class="h-slide-desc">Extended direct P2P launching to Fightcade 2 so netplay remains viable even without a central lobby server.</p>
+                <p class="h-slide-point">A P2P Direct Connection Architecture That Continues to Work Even Without a Central Lobby Server</p>
+                <p class="h-slide-desc">To maintain the value of the Fightcade 2 emulator even after the lobby server is shut down, </p>I expanded the direct connection idea between Supercade and FC1, </p> originally developed by someone else, to fit the FC2 environment..</p>
               </div>
             </div>
           </section>
@@ -315,12 +315,12 @@
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">메탈슬러그 30주년과 Arcanet-Mame</h2>
                 <p class="h-slide-point">MAME의 구조적 한계를 마주하다</p>
-                <p class="h-slide-desc">메탈슬러그 30주년을 맞아 Arcanet-Mame을 선보였으나 기존 MAME 구조가 Rollback과는 맞지 않는 설계적 한계를 더욱 선명히 마주했고, 이 경험이 코어와 프론트엔드를 분리한 현재의 ARCANET을 탄생시켰습니다.</p>
+                <p class="h-slide-desc">메탈슬러그 30주년을 맞아 Arcanet-Mame을 구버전을 기반으로 구현합니다. 그러나 계속되는 테스트 결과들은,</p> 기존 MAME 구조가 Rollback과는 맞지 않는 설계적 한계를 더욱 분명하게 만들어주었습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Metal Slug 30th Anniversary, Arcanet-Mame &amp; Turning Point</h2>
                 <p class="h-slide-point">Moving beyond MAME's limits into ARCANET's decoupled two-tier design</p>
-                <p class="h-slide-desc">Releasing Arcanet-Mame revealed the structural boundaries of legacy MAME, leading directly to ARCANET's core/frontend split.</p>
+                <p class="h-slide-desc">To celebrate Metal Slug's 30th anniversary, Arcanet-Mame is implemented based on an older version. </p> However, the ongoing test results further clarified the design limitations of the existing MAME architecture, </p>which did not align with Rollback.</p>
               </div>
             </div>
           </section>
@@ -353,7 +353,7 @@
       </div>
 
       <div class="process-footer-bar">
-        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">돌아가기</a>
       </div>
     </div>
   </main>

@@ -8,7 +8,7 @@ const i18nData = {
     "nav.process": "개발 과정",
     "nav.developer": "About Developer",
     "nav.support": "후원",
-    "hero.hint": "마우스 휠을 내려 프레젠테이션을 넘기세요",
+    "hero.hint": "마우스 휠을 내리세요",
     "pillar.arcade": "사라져가는 아케이드 시대의 게임 문화 보존과 계승",
     "pillar.board": "3D 아케이드 에뮬레이션을 위한 최적화된 아키텍처",
     "pillar.rollback": "결정론적 구조를 통해 지원되는 Rollback 넷코드",
@@ -31,42 +31,35 @@ const i18nData = {
     // 소개문 (pages/intro.html)
     "page.intro.eyebrow": "INTRO & ARCHIVE",
     "page.intro.title": "소개문",
-    "page.intro.lead": "Arcade와 Network의 합성어 — 세대를 넘어 이어질 아케이드 넷플레이 인프라를 향한 기록입니다.",
 
     // 설명 (pages/overview.html)
     "page.overview.eyebrow": "ARCHITECTURE & GUIDE",
     "page.overview.title": "설명",
-    "page.overview.lead": "ARCANET의 2단계 계층 아키텍처 구조와 ROM 정책 및 설치·사용 안내입니다.",
 
     // 구성요소 (pages/components.html)
     "page.components.eyebrow": "COMPONENTS & FILES",
     "page.components.title": "구성요소",
-    "page.components.lead": "실행 파일과 코어 모듈, 커뮤니티 매치메이킹 서버의 역할을 정리했습니다.",
 
     // 소식 (pages/news.html)
     "page.news.eyebrow": "DEV NOTES & ANNOUNCEMENTS",
     "page.news.title": "소식",
-    "page.news.lead": "개발자 노트와 주요 공지사항을 전하는 공간입니다.",
 
     // 다운로드 (pages/download.html)
     "page.download.eyebrow": "RELEASES & DOWNLOAD",
     "page.download.title": "다운로드",
-    "page.download.lead": "최신 빌드 바이너리, 지원 하드웨어 및 합법적 ROM 추출 도구 안내입니다.",
 
     // 개발 과정 (pages/process.html)
     "page.process.eyebrow": "ORIGIN & TIMELINE",
     "page.process.title": "개발 과정",
-    "page.process.lead": "2015년부터 ARCANET 아키텍처에 도달하기까지의 시행착오와 기술적 판단의 연대기입니다.",
 
     // About Developer (pages/developer.html)
     "page.developer.eyebrow": "ABOUT DEVELOPER",
     "page.developer.title": "About Developer",
-    "page.developer.lead": "생각나는 아이디어가 있다면 실제로 테스트해보는 걸 좋아하는 사람입니다.",
 
     // 후원 (pages/support.html)
     "page.support.eyebrow": "SUPPORT & COFFEE",
     "page.support.title": "후원",
-    "page.support.lead": "프로젝트의 지속적인 연구와 테스트 환경 유지에 힘을 보태고 싶다면 Buy Me a Coffee를 이용해 주세요."
+    "page.support.lead": "서버 및 커뮤니티를 홍보하거나, 프로젝트를 지원하는 메뉴입니다."
   },
   en: {
     "nav.intro": "Intro",
@@ -76,7 +69,7 @@ const i18nData = {
     "nav.process": "Dev Process",
     "nav.developer": "About Developer",
     "nav.support": "Support",
-    "hero.hint": "Scroll down to step through the presentation",
+    "hero.hint": "Scroll down to step",
     "pillar.arcade": "Preserve and pass on arcade gaming culture to the next generation",
     "pillar.board": "Architecture tailored for 3D arcade emulation",
     "pillar.rollback": "Rollback netcode powered by a deterministic state design",
@@ -98,31 +91,24 @@ const i18nData = {
 
     "page.intro.eyebrow": "INTRO & ARCHIVE",
     "page.intro.title": "Introduction",
-    "page.intro.lead": "A portmanteau of Arcade and Network — built to leave behind a lasting netplay infrastructure for future generations.",
 
     "page.overview.eyebrow": "ARCHITECTURE & GUIDE",
     "page.overview.title": "Overview & Setup",
-    "page.overview.lead": "Two-tier system architecture, ROM policy, and setup notes for ARCANET.",
 
     "page.components.eyebrow": "COMPONENTS & FILES",
     "page.components.title": "Components",
-    "page.components.lead": "Overview of the frontend executable, hardware core libraries, and community matchmaking server.",
 
     "page.news.eyebrow": "DEV NOTES & ANNOUNCEMENTS",
     "page.news.title": "News & Dev Notes",
-    "page.news.lead": "Developer notes, architecture updates, and announcements for Project Arcanet.",
 
     "page.download.eyebrow": "RELEASES & DOWNLOAD",
     "page.download.title": "Download",
-    "page.download.lead": "Latest binary builds, supported hardware logs, and legal ROM extraction references.",
 
     "page.process.eyebrow": "ORIGIN & TIMELINE",
     "page.process.title": "Development Process",
-    "page.process.lead": "A decade-long timeline of experiments, reverse engineering, and architectural shifts leading to ARCANET.",
 
     "page.developer.eyebrow": "ABOUT DEVELOPER",
     "page.developer.title": "About Developer",
-    "page.developer.lead": "Someone who enjoys putting ideas to the test in real code and hardware.",
 
     "page.support.eyebrow": "SUPPORT & COFFEE",
     "page.support.title": "Support",
