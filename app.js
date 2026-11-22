@@ -21,7 +21,7 @@ const i18nData = {
     "card2.title": "잊혀진 3D 아케이드 하드웨어",
     "card3.en": "Infrastructure of Arcade Netplay · Retro Communities Ark",
     "card3.title": "아케이드 넷플레이 인프라",
-    "card3.desc": "서버를 사용자들이 개설함으로써, 세대를 거쳐 계승되는 아케이드 커뮤니티의 방주(ARK)",
+    "card3.desc": "사용자들이 개설하는 애드온 서버,\n 세대를 거쳐 계승되는 아케이드 커뮤니티의 방주(ARK)",
     "release.eyebrow": "PROJECT ARCANET",
     "release.title": "릴리즈 및 저장소",
     "release.desc": "최신 바이너리 릴리즈와 각 섹션별 상세 페이지는 상단 메뉴 또는 GitHub Releases에서 확인할 수 있습니다.",
