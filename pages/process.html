@@ -21,7 +21,6 @@
         <a href="intro.html" data-i18n="nav.intro">소개문</a>
         <a href="overview.html" data-i18n="nav.overview">설명</a>
         <a href="components.html" data-i18n="nav.components">구성요소</a>
-        <a href="news.html" data-i18n="nav.news">소식</a>
         <a href="download.html" data-i18n="nav.download">다운로드</a>
         <a href="process.html" class="active" data-i18n="nav.process">개발 과정</a>
         <a href="developer.html" data-i18n="nav.developer">About Developer</a>
@@ -36,6 +35,7 @@
     </div>
   </header>
 
+  <!-- 휠 스크롤 연동 가로 타임라인 프레젠테이션 -->
   <main class="process-stage" id="process-stage">
     <div class="process-sticky">
       <div class="process-header">
@@ -45,29 +45,66 @@
         </div>
         <p class="process-hint" data-i18n="hero.hint">마우스 휠을 내려 프레젠테이션을 넘기세요</p>
       </div>
-      
+
+      <!-- 상단 가로 타임라인 노드 바 -->
       <div class="h-timeline-bar" id="h-timeline-bar" role="tablist" aria-label="Development Timeline">
         <div class="h-timeline-track">
           <div class="h-timeline-fill" id="h-timeline-fill"></div>
         </div>
-        <button type="button" class="h-node active" data-step="0"><span class="h-dot"></span><span class="h-year">2015.05</span></button>
-        <button type="button" class="h-node" data-step="1"><span class="h-dot"></span><span class="h-year">2019.03</span></button>
-        <button type="button" class="h-node" data-step="2"><span class="h-dot"></span><span class="h-year">2019.10</span></button>
-        <button type="button" class="h-node" data-step="3"><span class="h-dot"></span><span class="h-year">2020.01</span></button>
-        <button type="button" class="h-node" data-step="4"><span class="h-dot"></span><span class="h-year">2020.07</span></button>
-        <button type="button" class="h-node" data-step="5"><span class="h-dot"></span><span class="h-year">2020~23</span></button>
-        <button type="button" class="h-node" data-step="6"><span class="h-dot"></span><span class="h-year">2022.03</span></button>
-        <button type="button" class="h-node" data-step="7"><span class="h-dot"></span><span class="h-year">2022~24</span></button>
-        <button type="button" class="h-node" data-step="8"><span class="h-dot"></span><span class="h-year">2026.04</span></button>
-        <button type="button" class="h-node" data-step="9"><span class="h-dot"></span><span class="h-year">2026.11</span></button>
+        <button type="button" class="h-node active" data-step="0">
+          <span class="h-dot"></span>
+          <span class="h-year">2015.05</span>
+        </button>
+        <button type="button" class="h-node" data-step="1">
+          <span class="h-dot"></span>
+          <span class="h-year">2019.03</span>
+        </button>
+        <button type="button" class="h-node" data-step="2">
+          <span class="h-dot"></span>
+          <span class="h-year">2019.10</span>
+        </button>
+        <button type="button" class="h-node" data-step="3">
+          <span class="h-dot"></span>
+          <span class="h-year">2020.01</span>
+        </button>
+        <button type="button" class="h-node" data-step="4">
+          <span class="h-dot"></span>
+          <span class="h-year">2020.07</span>
+        </button>
+        <button type="button" class="h-node" data-step="5">
+          <span class="h-dot"></span>
+          <span class="h-year">2020~23</span>
+        </button>
+        <button type="button" class="h-node" data-step="6">
+          <span class="h-dot"></span>
+          <span class="h-year">2022.03</span>
+        </button>
+        <button type="button" class="h-node" data-step="7">
+          <span class="h-dot"></span>
+          <span class="h-year">2022~24</span>
+        </button>
+        <button type="button" class="h-node" data-step="8">
+          <span class="h-dot"></span>
+          <span class="h-year">2026.04</span>
+        </button>
+        <button type="button" class="h-node" data-step="8">
+          <span class="h-dot"></span>
+          <span class="h-year">2026.11</span>
+        </button>		
       </div>
 
+      <!-- 좌우 슬라이드 뷰포트 -->
       <div class="h-slides-viewport">
         <div class="h-slides-track" id="h-slides-track">
+
+          <!-- 01: 2015.05.31 -->
           <section class="h-slide active" data-step="0">
             <div class="h-media-box">
               <img src="../assets/process-2015-table.png" alt="2015 마메 카일레라 넷플 정리표" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">ARCHIVE · 2015.05.31</span><p>assets/process-2015-table.png</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">ARCHIVE · 2015.05.31</span>
+                <p>assets/process-2015-table.png</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">01 / 10 · 2015.05.31</span>
@@ -79,16 +116,22 @@
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Benchmarking Overclock-Capable Neo Geo Emulators</h2>
                 <p class="h-slide-point">Comparing nine MAME derivatives—the first step of a decade-long journey</p>
-                <p class="h-slide-desc">Built a comparison matrix to find the best Neo Geo build supporting overclocking for Metal Slug netplay, unaware that this was only the beginning.</p>
+                <p class="h-slide-desc">Created a comparison matrix to find the best Neo Geo build supporting overclocking for Metal Slug netplay, unaware that this was only the beginning.</p>
               </div>
-              <div class="timeline-links"><a href="https://youtube.com/watch?v=_hCOmMY2f-4" target="_blank" rel="noopener" class="timeline-link">YouTube 테스트 영상 보기</a></div>
+              <div class="timeline-links">
+                <a href="https://youtube.com/watch?v=_hCOmMY2f-4" target="_blank" rel="noopener" class="timeline-link">YouTube 테스트 영상 보기</a>
+              </div>
             </div>
           </section>
 
+          <!-- 02: 2019.03 -->
           <section class="h-slide" data-step="1">
             <div class="h-media-box">
               <img src="../assets/process-2019-03.png" alt="EKMame & 첫 커스텀 MAME 빌드" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">CUSTOM BUILD · 2019.03</span><p>EKMame ASM Core &amp; Kaillera Support</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">CUSTOM BUILD · 2019.03</span>
+                <p>EKMame ASM Core &amp; Kaillera Support</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">02 / 10 · 2019.03</span>
@@ -100,15 +143,19 @@
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">First Custom MAME Build &amp; EKMame Study</h2>
                 <p class="h-slide-point">Using EKMame as a textbook to integrate ASM cores and Kaillera</p>
-                <p class="h-slide-desc">After finding legacy Kaillera and MAME setups lacking, I studied EKMame and built my first custom MAME with ASM core support for ROM hacks and Kaillera.</p>
+                <p class="h-slide-desc">Built my first custom MAME with ASM core emulation for ROM hacks and Kaillera netplay support.</p>
               </div>
             </div>
           </section>
 
+          <!-- 03: 2019.10 -->
           <section class="h-slide" data-step="2">
             <div class="h-media-box">
               <img src="../assets/process-2019-10.png" alt="Final Burn Alpha 포팅" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">PORTING · 2019.10</span><p>Final Burn Alpha Legacy Port</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">PORTING · 2019.10</span>
+                <p>Final Burn Alpha Legacy Port</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">03 / 10 · 2019.10</span>
@@ -120,15 +167,19 @@
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Porting Drivers to Final Burn Alpha (FBA)</h2>
                 <p class="h-slide-point">Pivoting to FBA's lightweight architecture to resolve ROM hack resets</p>
-                <p class="h-slide-desc">Spotted reset issues on certain ROM hacks in custom MAME and used my MAME internals knowledge to port driver logic into an older FBA build.</p>
+                <p class="h-slide-desc">Leveraged insights from MAME internals to port custom driver logic directly into an older FBA codebase.</p>
               </div>
             </div>
           </section>
 
+          <!-- 04: 2020.01.15 -->
           <section class="h-slide" data-step="3">
             <div class="h-media-box">
               <img src="../assets/process-2020-01.png" alt="GGPOFBA 빌드 테스트" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">ROLLBACK · 2020.01.15</span><p>GGPOFBA (VC 2003+ Toolkit Build)</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">ROLLBACK · 2020.01.15</span>
+                <p>GGPOFBA (VC 2003+ Toolkit Build)</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">04 / 10 · 2020.01.15</span>
@@ -140,16 +191,22 @@
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Kaillera's Limits &amp; Building Legacy GGPOFBA</h2>
                 <p class="h-slide-point">Experiencing rollback netplay firsthand—alongside legacy toolchain debt</p>
-                <p class="h-slide-desc">Acknowledging Kaillera's limits for stable netplay, I located archival GGPOFBA source and built it with the VC 2003+ toolkit—great playability, but heavy maintenance overhead.</p>
+                <p class="h-slide-desc">Compiled archival GGPOFBA source with the VC 2003+ toolkit; netplay felt great, though maintenance proved unsustainable.</p>
               </div>
-              <div class="timeline-links"><a href="https://youtu.be/q7djvgEUpkk" target="_blank" rel="noopener" class="timeline-link">YouTube 구동 영상 보기</a></div>
+              <div class="timeline-links">
+                <a href="https://youtu.be/q7djvgEUpkk" target="_blank" rel="noopener" class="timeline-link">YouTube 구동 영상 보기</a>
+              </div>
             </div>
           </section>
 
+          <!-- 05: 2020.07.21 -->
           <section class="h-slide" data-step="4">
             <div class="h-media-box">
               <img src="../assets/process-2020-07.png" alt="Fightcade 2 FBNeo 오버클럭" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">UPSTREAM PR · 2020.07.21</span><p>fightcade-fbneo-overclock</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">UPSTREAM PR · 2020.07.21</span>
+                <p>fightcade-fbneo-overclock</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">05 / 10 · 2020.07.21</span>
@@ -161,36 +218,46 @@
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Fightcade 2 FBNeo Overclock Port &amp; Upstream PR</h2>
                 <p class="h-slide-point">Realizing the need for independent infrastructure after upstream rejection</p>
-                <p class="h-slide-desc">Ported overclock settings into the released Fightcade 2 FBNeo source and submitted documentation; due to inherited risks, only Metal Slug hack drivers were accepted while overclocking was turned down (as with REDGGPO).</p>
+                <p class="h-slide-desc">Ported overclocking to FC2 FBNeo; only Metal Slug hack drivers were merged while overclocking was declined due to inherited risks.</p>
               </div>
-              <div class="timeline-links"><a href="https://github.com/Zansword/fightcade-fbneo-overclock" target="_blank" rel="noopener" class="timeline-link">GitHub 저장소 보기</a></div>
+              <div class="timeline-links">
+                <a href="https://github.com/Zansword/fightcade-fbneo-overclock" target="_blank" rel="noopener" class="timeline-link">GitHub 저장소 보기</a>
+              </div>
             </div>
           </section>
 
+          <!-- 06: 2020.12 ~ 2023.01 -->
           <section class="h-slide" data-step="5">
             <div class="h-media-box">
               <img src="../assets/process-2021-ce.png" alt="치트엔진 트레이너 실험" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">EXPERIMENT · 2020.12 ~ 2023.01</span><p>External Memory Overclock Trainer</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">EXPERIMENT · 2020.12 ~ 2023.01</span>
+                <p>External Memory Overclock Trainer</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">06 / 10 · 2020.12 ~ 2023.01</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">치트엔진 트레이너 결합 실험</h2>
                 <p class="h-slide-point">외부 메모리 패치 방식의 편리함과 백신 오탐지라는 현실적 한계</p>
-                <p class="h-slide-desc">FC2 공식 지원 전 오버클럭 옵션이 사라졌던 시기에 공식 에뮬레이터와 치트엔진 트레이너를 결합했습니다. 오프라인에서는 유용했으나 악성코드 유사 패턴으로 탐지되는 한계가 있었습니다.</p>
+                <p class="h-slide-desc">FC2 공식 지원 전 오버클럭 옵션이 사라진 시기에 공식 에뮬레이터와 치트엔진 트레이너를 결합했습니다. 오프라인에서는 유용했으나 악성코드 유사 패턴으로 탐지되는 한계가 있었습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Cheat Engine Trainer Integration Experiment</h2>
                 <p class="h-slide-point">Effective for offline play, yet limited by antivirus heuristics</p>
-                <p class="h-slide-desc">While overclocking was absent prior to official FC2 support, I paired the official emulator with a Cheat Engine trainer—great offline, but flagged due to malware-like behavior patterns.</p>
+                <p class="h-slide-desc">Paired the official emulator with a Cheat Engine trainer before official support arrived, but memory injection triggered false-positive flags.</p>
               </div>
             </div>
           </section>
 
+          <!-- 07: 2022.03.16 -->
           <section class="h-slide" data-step="6">
             <div class="h-media-box">
               <img src="../assets/process-2022-03.png" alt="Namco System 12 헥스 수정" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">SYSTEM 12 · 2022.03.16</span><p>MAME++ 0.132u1 Hex Patch (SRkade Mame)</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">SYSTEM 12 · 2022.03.16</span>
+                <p>MAME++ 0.132u1 Hex Patch (SRkade Mame)</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">07 / 10 · 2022.03.16</span>
@@ -200,18 +267,24 @@
                 <p class="h-slide-desc">오토 프레임스킵과 불완전한 사운드 클럭 문제를 겪던 레거시 바이너리를 헥스 에디터로 직접 수정해 배포했으며, 이후 커뮤니티에서 SRkade Mame이라는 이름으로 공유되기도 했습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
-                <h2 class="h-slide-title">Hex-Editing MAME Plus! Plus! 0.132u1 for System 12</h2>
-                <p class="h-slide-point">Patching a legacy binary directly for Tekken Tag Tournament play</p>
-                <p class="h-slide-desc">Hex-edited a legacy binary suffering from auto-frameskip and imperfect sound clock timing on Namco System 12; later shared in communities as SRkade Mame.</p>
+                <h2 class="h-slide-title">Hex-Editing MAME++ 0.132u1 for Namco System 12</h2>
+                <p class="h-slide-point">Directly patching legacy binaries for Tekken Tag Tournament players</p>
+                <p class="h-slide-desc">Modified auto-frameskip and sound clock behavior via hex editor, later shared by the community as SRkade Mame.</p>
               </div>
-              <div class="timeline-links"><a href="https://youtu.be/NabBnd2jOzI" target="_blank" rel="noopener" class="timeline-link">YouTube 테스트 영상 보기</a></div>
+              <div class="timeline-links">
+                <a href="https://youtu.be/NabBnd2jOzI" target="_blank" rel="noopener" class="timeline-link">YouTube 테스트 영상 보기</a>
+              </div>
             </div>
           </section>
 
+          <!-- 08: 2022.05 ~ 2024.05 -->
           <section class="h-slide" data-step="7">
             <div class="h-media-box">
               <img src="../assets/process-2023-p2p.png" alt="Fightcade 2 P2P Direct Launcher" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">DECENTRALIZED · 2022.05 ~ 2024.05</span><p>Fightcade 2 P2P Direct Launcher</p></div>
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">DECENTRALIZED · 2022.05 ~ 2024.05</span>
+                <p>Fightcade 2 P2P Direct Launcher</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">08 / 10 · 2022.05 ~ 2024.05</span>
@@ -222,16 +295,20 @@
               </div>
               <div data-lang-block="en" style="display:none;">
                 <h2 class="h-slide-title">Fightcade 2 P2P Direct Launcher</h2>
-                <p class="h-slide-point">Extending direct P2P play beyond central lobby servers</p>
-                <p class="h-slide-desc">Adapted the Supercade and Fightcade 1 direct-connection idea to Fightcade 2 so netplay can remain usable even after lobby server shutdowns.</p>
+                <p class="h-slide-point">Validating serverless P2P connections built to outlive central lobbies</p>
+                <p class="h-slide-desc">Extended direct P2P launching to Fightcade 2 so netplay remains viable even without a central lobby server.</p>
               </div>
             </div>
           </section>
 
+          <!-- 09: 2026.04.19 -->
           <section class="h-slide" data-step="8">
             <div class="h-media-box">
-              <img src="../assets/process-2026-arcanet-mame.png" alt="Arcanet-Mame" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">MILESTONE · 2026.04.19</span><p>Metal Slug 30th · Arcanet-Mame</p></div>
+              <img src="../assets/process-2026-arcanet.png" alt="Arcanet-Mame & ARCANET Architecture" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">TURNING POINT · 2026.04.19</span>
+                <p>Arcanet-Mame → Two-Tier ARCANET</p>
+              </div>
             </div>
             <div class="h-text-box">
               <span class="timeline-date">09 / 10 · 2026.04.19</span>
@@ -241,39 +318,43 @@
                 <p class="h-slide-desc">메탈슬러그 30주년을 맞아 Arcanet-Mame을 선보였으나 기존 MAME 구조가 Rollback과는 맞지 않는 설계적 한계를 더욱 선명히 마주했고, 이 경험이 코어와 프론트엔드를 분리한 현재의 ARCANET을 탄생시켰습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
-                <h2 class="h-slide-title">Metal Slug 30th Anniversary &amp; Arcanet-Mame</h2>
-                <p class="h-slide-point">Confronting the structural limits of MAME for rollback netplay</p>
-                <p class="h-slide-desc">Released Arcanet-Mame for Metal Slug's 30th anniversary, making MAME's architectural mismatch with rollback netcode unmistakable and paving the way to ARCANET.</p>
+                <h2 class="h-slide-title">Metal Slug 30th Anniversary, Arcanet-Mame &amp; Turning Point</h2>
+                <p class="h-slide-point">Moving beyond MAME's limits into ARCANET's decoupled two-tier design</p>
+                <p class="h-slide-desc">Releasing Arcanet-Mame revealed the structural boundaries of legacy MAME, leading directly to ARCANET's core/frontend split.</p>
               </div>
             </div>
           </section>
 
-          <section class="h-slide" data-step="9">
+          <!-- 10: 2026.11 -->
+          <section class="h-slide" data-step="8">
             <div class="h-media-box">
-              <img src="../assets/process-2026-arcanet.png" alt="ARCANET Two-Tier Architecture" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="media-placeholder" style="display:none;"><span class="media-tag">ARCANET · 2026.11</span><p>Beyond MAME &amp; FBNeo → Two-Tier ARCANET</p></div>
+              <img src="../assets/process-2026-arcanet.png" alt="Arcanet-Mame & ARCANET Architecture" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="media-placeholder" style="display:none;">
+                <span class="media-tag">TURNING POINT · 2026.04.19</span>
+                <p>Arcanet-Mame → Two-Tier ARCANET</p>
+              </div>
             </div>
             <div class="h-text-box">
-              <span class="timeline-date">10 / 10 · 2026.11</span>
+              <span class="timeline-date">10 / 10 · 2026.04.19</span>
               <div data-lang-block="ko">
                 <h2 class="h-slide-title">MAME와 FBNeo를 넘어, 새로운 에뮬레이터에 도전</h2>
                 <p class="h-slide-point">MAME의 구조적 한계를 넘어 2단계 분리 아키텍처 ARCANET으로 도약하다</p>
                 <p class="h-slide-desc">AI시대의 도래와 함께, 바이브코딩의 가능성을 믿고, 에뮬레이터의 새로운 아키텍처와 철학을 설계함으로써, ARCANET이 새롭게 태어났습니다.</p>
               </div>
               <div data-lang-block="en" style="display:none;">
-                <h2 class="h-slide-title">Beyond MAME &amp; FBNeo: A New Emulator Architecture</h2>
-                <p class="h-slide-point">Leaping into ARCANET's decoupled two-tier design</p>
-                <p class="h-slide-desc">Embracing AI-assisted vibe coding and designing a fresh emulator architecture and philosophy from the ground up, ARCANET was born.</p>
+                <h2 class="h-slide-title">Metal Slug 30th Anniversary, Arcanet-Mame &amp; Turning Point</h2>
+                <p class="h-slide-point">Moving beyond MAME's limits into ARCANET's decoupled two-tier design</p>
+                <p class="h-slide-desc">Releasing Arcanet-Mame revealed the structural boundaries of legacy MAME, leading directly to ARCANET's core/frontend split.</p>
               </div>
             </div>
           </section>
+
         </div>
       </div>
 
       <div class="process-footer-bar">
-        <a href="../index.html" class="secondary-btn" data-i18n="back.home">돌아가기</a>
+        <a href="../index.html" class="secondary-btn" data-i18n="back.home">메인 프레젠테이션으로 돌아가기</a>
       </div>
-
     </div>
   </main>
 

@@ -3,7 +3,6 @@ const i18nData = {
   ko: {
     "nav.intro": "소개문",
     "nav.overview": "설명",
-    "nav.components": "구성요소",
     "nav.news": "소식",
     "nav.download": "다운로드",
     "nav.process": "개발 과정",
@@ -72,7 +71,6 @@ const i18nData = {
   en: {
     "nav.intro": "Intro",
     "nav.overview": "Overview",
-    "nav.components": "Components",
     "nav.news": "News",
     "nav.download": "Download",
     "nav.process": "Dev Process",
@@ -365,3 +363,63 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("scroll", handleProcessScroll, { passive: true });
 window.addEventListener("resize", handleProcessScroll, { passive: true });
 handleProcessScroll();
+
+// 5. 다운로드 페이지 지원 게임 및 하드웨어 검색 / 필터 제어
+const compatSearchInput = document.getElementById("compat-search-input");
+const compatFilterChips = Array.from(document.querySelectorAll(".filter-chip[data-board]"));
+const compatRows = Array.from(document.querySelectorAll("#compat-tbody tr[data-board]"));
+const compatCountEl = document.getElementById("compat-count");
+const compatEmptyEl = document.getElementById("compat-empty");
+
+let selectedBoardFilter = "ALL";
+
+function renderCompatList() {
+  if (!compatRows.length) return;
+  const query = (compatSearchInput ? compatSearchInput.value : "").trim().toLowerCase();
+  let visibleCount = 0;
+
+  compatRows.forEach((row) => {
+    const board = (row.getAttribute("data-board") || "").toUpperCase();
+    const searchText = (row.getAttribute("data-search") || row.textContent || "").toLowerCase();
+    const matchesBoard = selectedBoardFilter === "ALL" || board === selectedBoardFilter;
+    const matchesQuery = !query || searchText.includes(query);
+    const show = matchesBoard && matchesQuery;
+
+    row.style.display = show ? "" : "none";
+    if (show) visibleCount += 1;
+  });
+
+  if (compatCountEl) {
+    const lang = document.documentElement.lang || "ko";
+    compatCountEl.textContent =
+      lang === "en"
+        ? `Showing ${visibleCount} of ${compatRows.length} entries`
+        : `총 ${compatRows.length}개 중 ${visibleCount}개 표시`;
+  }
+
+  if (compatEmptyEl) {
+    compatEmptyEl.style.display = visibleCount === 0 ? "block" : "none";
+  }
+}
+
+compatFilterChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    selectedBoardFilter = (chip.getAttribute("data-board") || "ALL").toUpperCase();
+    compatFilterChips.forEach((c) => c.classList.toggle("active", c === chip));
+    renderCompatList();
+  });
+});
+
+if (compatSearchInput) {
+  compatSearchInput.addEventListener("input", renderCompatList);
+}
+
+if (typeof setLanguage === "function") {
+  const prevSetLanguage = setLanguage;
+  setLanguage = function (lang) {
+    prevSetLanguage(lang);
+    renderCompatList();
+  };
+}
+
+renderCompatList();

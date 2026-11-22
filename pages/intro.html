@@ -21,7 +21,6 @@
         <a href="intro.html" class="active" data-i18n="nav.intro">소개문</a>
         <a href="overview.html" data-i18n="nav.overview">설명</a>
         <a href="components.html" data-i18n="nav.components">구성요소</a>
-        <a href="news.html" data-i18n="nav.news">소식</a>
         <a href="download.html" data-i18n="nav.download">다운로드</a>
         <a href="process.html" data-i18n="nav.process">개발 과정</a>
         <a href="developer.html" data-i18n="nav.developer">About Developer</a>
@@ -67,18 +66,17 @@
         </div>
 
         <div class="prose-block" data-lang-block="en" style="display:none;">
-          <p><strong>ARCANET</strong> is a portmanteau of <em>Arcade</em> and <em>Network</em>—an emulator project designed for remote arcade play by exchanging player inputs over a network.</p>
-          <p>Networked arcade tools did not start with me; they first emerged in the 2000s alongside MAME. Early connections were mostly restricted to nearby regions until <strong>GGPO</strong> introduced rollback netcode and broke through that limitation.</p>
-          <p>As arcade emulation matured, MAME began reaching playable emulation for early 3D arcade hardware—including boards using PSX-class CPUs. Around that time, MAME's emulation architecture grew increasingly complex, making practical rollback netcode difficult and breaking compatibility with <strong>Kaillera</strong>, MAME's sole networking layer.</p>
-          <p>Following the 2015 integration with <strong>MESS</strong>, MAME increasingly prioritized hardware accuracy over raw performance, moving away from online versus play. <strong>Final Burn Alpha</strong>—an early adopter of GGPO—took over that role, yet its lean practical design set aside ambitious 3D hardware to focus on proven 2D boards. Network activity around 3D arcade titles gradually faded, reinforced by the impression that 3D emulation required high-end PCs, passing the spotlight toward newer projects.</p>
-          <p>My starting point was the Neo Geo <strong>Metal Slug</strong> series: I wanted a delay-free rollback environment with open spectating and drop-in play, where communities could form freely like Kaillera and preserve a space for future generations to play together.</p>
-          <p>Along the way, an encounter around <strong>Tekken Tag Tournament</strong> opened my eyes. Speaking with him revealed that 3D arcade communities in 2020 were still stuck in 2000s Kaillera. Seeing the passion of someone who had sought out my personal blog even when I had no interest in 3D arcades moved me, leading me to investigate 3D hardware emulation including <strong>Namco System 12</strong>. <span class="inline-note">(See <a href="process.html">Dev Process</a> for the full timeline.)</span></p>
+          <p><strong>ARCANET</strong> is a portmanteau of <em>Arcade</em> and <em>Network</em>—an emulator project built to let players exchange inputs remotely over a network and play arcade games together.</p>
+          <p>Programs with this purpose were not invented by me; they first appeared in the 2000s alongside MAME. Early networking was largely limited to nearby regions until <strong>GGPO</strong> arrived with rollback netcode and broke through that barrier.</p>
+          <p>Meanwhile, MAME evolved to emulate early 3D arcade hardware powered by PSX-class CPUs. As its architecture grew more complex and increasingly prioritized cycle/hardware accuracy—especially around the 2015 integration with <strong>MESS</strong>—state serialization became too heavy for practical rollback netplay, breaking compatibility with <strong>Kaillera</strong>. <strong>Final Burn Alpha</strong> stepped in with a lightweight design and GGPO, but set aside challenging 3D hardware to focus on proven 2D arcade boards, leaving 3D arcade netplay largely forgotten.</p>
+          <p>My own journey began with the Neo Geo <strong>Metal Slug</strong> series: I wanted a zero-delay rollback environment with free spectating, drop-in play, and user-driven communities like Kaillera, preserving an infrastructure that future generations could still play together.</p>
+          <p>Along the way, an encounter with a passionate <strong>Tekken Tag Tournament</strong> player—who visited my personal blog back when I had no interest in 3D arcades—showed me that 3D arcade communities in 2020 were still stuck in the 2000s Kaillera era. Moved by that passion, I resolved to help bring 3D hardware such as <strong>Namco System 12</strong> into modern rollback netplay. <span class="inline-note">(See <a href="process.html">Dev Process</a> for the full timeline.)</span></p>
           <div class="highlight-quote">
-            Delay-free remote play for Metal Slug, reliable 3–4 player multiplayer, and a lasting rollback netcode infrastructure for forgotten 3D arcade boards.<br /><br />
-            Drawing on everything I have seen, heard, and experienced—together with AI as a tool—to build the answer emulator developers never gave me: that is <strong>ARCANET</strong>.
+            Delay-free Metal Slug netplay, reliable 3–4 player multiplayer, and a lasting rollback netcode infrastructure for forgotten 3D arcade boards.<br /><br />
+            Built by combining everything I have seen, heard, and experienced with AI as a tool—that answer is <strong>ARCANET</strong>.
           </div>
-          <p>I am only human, so I will not claim perfection. Still, for the ARCANET that future generations will pass on to those after them, I will do everything I can before stepping away.</p>
-          <p><strong>Players of the future—I entrust the next generation to you.</strong></p>
+          <p>I am only human, so I will not claim perfection. Yet for the ARCANET that future generations will pass on to those after them, I will give everything I can before I step away.</p>
+          <p><strong>Players of the future—I leave the next generation in your hands.</strong></p>
 
           <div class="signature-block">
             <span class="signature-date">Since 2013.07 ~ 2026.11.</span>
@@ -107,7 +105,7 @@
             </ul>
           </div>
           <div class="thanks-box">
-            <h4>My Special bond &amp; defining relationship</h4>
+            <h4>My Special bond & defining relationship</h4>
             <ul class="thanks-list">
               <li><strong>HAM</strong> AKA 예니오</li>
               <li><strong>Keshibill</strong></li>
